@@ -22,6 +22,10 @@ body {
           justify-content: center;
 }
 
+.feather {
+  color: #ff5c61;
+}
+
 .portfolio {
   width: 100%;
   max-width: 900px;
