@@ -1,24 +1,50 @@
 <link rel="stylesheet" type="text/css" href="static/style.css">
 <script src="https://unpkg.com/feather-icons"></script>
 
-<div class="portfolio">
-    <div class="portfolio-header">
-        <!-- <i data-feather="home"></i> -->
-        <div class="logo">&#8711;&#8710;</div>
-        <div class="switch"> 🌘</div>
-    </div>
-    <div class="portfolio-content">
-        <div class="content-container">
-            <div class="content-heading">
-                TURNING THE RASPBERRY PI 4 INTO A MINI SERVER <br>
-                --
-            </div>
-            <div class="content-text">Since the Raspberry Pi 4 came out last year, we now have an excellent candidate to base the mini server on. The faster processor and option for up to 8GB of RAM opens up more possibilities for what you can do with it, including now being more than capable as a general Linux desktop system, so with all that in mind, I'd like to introduce the NODE Mini Server version 3.</div>
+
+
+    <div class="portfolio">
+        <div class="portfolio-header">
+            <!-- <i data-feather="home"></i> -->
+            <div class="logo">&#8711;&#8710;</div>
+            <div class="switch" onClick="switchTheme()"> 🌘</div>
+        </div>
+        <div class="portfolio-content">
+            <div class="content-container">
+                <div class="content-heading">
+                    THIS IS GOING TO MY PORTFOLIO <br>
+                    --
+                </div>
+                <div class="content-text">Contrast can be a small element next to a huge one. Contrast can be a highlight color that stands out in a sea of a base color. Contrast could be a thick line vs. thin. It doesn't always have to be dramatic either. Typographic scale involves contrast because it means establishing a hierarchy of type sizes that are noticeably different. Just setting up the sizes for h1-h6 elements is an exercise in contrast.</div>
+        </div>
         </div>
     </div>
-</div>
+    
+
 
 
 <script>
     feather.replace()
+    var toggle = document.querySelector('.switch');
+    var storedTheme = localStorage.getItem('theme') || (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+    document.documentElement.classList.toggle(storedTheme)
+    if(storedTheme == 'dark'){
+        toggle.innerHTML = "🌘"
+    }
+    else{
+        toggle.innerHTML = "🌖";
+    }
+
+
+    function switchTheme(){
+        if(toggle.innerHTML == "🌘"){
+            toggle.innerHTML = "🌖";
+            document.documentElement.className = 'light';
+        }
+        else{
+            toggle.innerHTML = "🌘";
+            document.documentElement.className = 'dark';
+        }
+        
+    }
   </script>

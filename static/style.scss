@@ -1,22 +1,27 @@
 @import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
 
-.light:root {
-    --portfolio-bg-light: #222;
-    --font-light:#c8c8c8;
+.dark:root {
+    --portfolio-bg-dark: #222;
+    --font-text:#c8c8c8;
+    --font-heading: #fff;
 }
 
-:root {
-    --portfolio-bg-dark: #222;
-    --font-dark:#c8c8c8;
+.light:root {
+    --portfolio-bg-light: #c8c8c8;
+    --font-text:#555;
+    --font-heading: #222;
 }
+
+
 
 body{
     background-color: var(--portfolio-bg-dark);
     font-family: 'Share Tech Mono', Monospace, Courier;;
-    color: var(--font-dark);
+    color: var(--font-text);
     letter-spacing: 0.1px;
     display: flex;
     justify-content: center;
+    transition: all 300ms linear;
 }
 
 .feather{
@@ -24,9 +29,14 @@ body{
 }
 
 
+.container{
+    display: flex;
+    flex-direction: column;
+}
+
 .portfolio{
     width: 100%;
-    max-width: 900px;
+    max-width: 1200px;
     
 }
 .portfolio-header{
@@ -44,7 +54,8 @@ body{
     }
 
     .switch{
-        font-size: 30px;
+        font-size: 23px;
+        cursor: pointer;
     }
 
 
@@ -60,11 +71,12 @@ body{
         .content-heading{
             margin-top: 20px;
             margin-bottom: 20px;
-            color: #fff;
+            color: var(--font-heading);
             font-weight: 400;
         }
         .content-text{
             line-height: 28px;
+            text-align: justify;
         }
         
     }
