@@ -32,7 +32,6 @@ body {
 }
 
 .portfolio-header {
-  font-size: 20px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -44,6 +43,16 @@ body {
           justify-content: space-between;
   width: 100%;
   padding: 16px 0px;
+}
+
+.portfolio-header .logo {
+  font-weight: 900;
+  font-size: 40px;
+  letter-spacing: -7px;
+}
+
+.portfolio-header .switch {
+  font-size: 30px;
 }
 
 .portfolio-content {
