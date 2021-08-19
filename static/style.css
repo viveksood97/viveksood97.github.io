@@ -1,18 +1,18 @@
 @import url("https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap");
-.dark:root {
-  --portfolio-bg-dark: #222;
+:root {
+  --portfolio-bg: #222;
   --font-text:#c8c8c8;
   --font-heading: #fff;
 }
 
 .light:root {
-  --portfolio-bg-light: #c8c8c8;
+  --portfolio-bg: #c8c8c8;
   --font-text:#555;
   --font-heading: #222;
 }
 
 body {
-  background-color: var(--portfolio-bg-dark);
+  background-color: var(--portfolio-bg);
   font-family: 'Share Tech Mono', Monospace, Courier;
   color: var(--font-text);
   letter-spacing: 0.1px;
@@ -22,15 +22,11 @@ body {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  -webkit-transition: all 300ms linear;
-  transition: all 300ms linear;
 }
 
-.feather {
-  color: #ff5c61;
-}
-
-.container {
+.application {
+  width: 100%;
+  max-width: 1200px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -40,12 +36,7 @@ body {
           flex-direction: column;
 }
 
-.portfolio {
-  width: 100%;
-  max-width: 1200px;
-}
-
-.portfolio-header {
+.application .header {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -57,43 +48,30 @@ body {
           justify-content: space-between;
   width: 100%;
   padding: 16px 0px;
+  border-bottom: 1px dashed var(--font-text);
+  -webkit-transform: rotate(-90deg);
+          transform: rotate(-90deg);
 }
 
-.portfolio-header .logo {
-  font-weight: 900;
-  font-size: 40px;
-  letter-spacing: -7px;
-}
-
-.portfolio-header .switch {
-  font-size: 23px;
-  cursor: pointer;
-}
-
-.portfolio-content {
-  font-size: 17px;
-  width: 100%;
+.application .header .logo-div {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  width: 80px;
 }
 
-.portfolio-content .content-container {
-  width: 100%;
+.application .header .logo-div .logo {
+  font-weight: 900;
+  font-size: 40px;
+  letter-spacing: -7px;
 }
 
-.portfolio-content .content-container .content-heading {
-  margin-top: 20px;
-  margin-bottom: 20px;
-  color: var(--font-heading);
-  font-weight: 400;
-}
-
-.portfolio-content .content-container .content-text {
-  line-height: 28px;
-  text-align: justify;
+.icon {
+  font-size: 23px;
+  cursor: pointer;
+  padding: 16px, 0px;
 }
 /*# sourceMappingURL=style.css.map */
