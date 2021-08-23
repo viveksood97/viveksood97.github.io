@@ -1,5 +1,12 @@
 @import url("https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap");
-@import url("https://db.onlinewebfonts.com/c/87199e44ea4ccb4927b1ceca605b03bc?family=Joystick");
+@font-face {
+  font-family: "Joystick";
+  src: url("http://db.onlinewebfonts.com/t/87199e44ea4ccb4927b1ceca605b03bc.eot");
+  /* IE9*/
+  src: url("http://db.onlinewebfonts.com/t/87199e44ea4ccb4927b1ceca605b03bc.eot?#iefix") format("embedded-opentype"), url("http://db.onlinewebfonts.com/t/87199e44ea4ccb4927b1ceca605b03bc.woff2") format("woff2"), url("http://db.onlinewebfonts.com/t/87199e44ea4ccb4927b1ceca605b03bc.woff") format("woff"), url("http://db.onlinewebfonts.com/t/87199e44ea4ccb4927b1ceca605b03bc.ttf") format("truetype"), url("http://db.onlinewebfonts.com/t/87199e44ea4ccb4927b1ceca605b03bc.svg#Joystick") format("svg");
+}
+
+/* iOS 4.1- */
 .dark:root {
   --portfolio-bg: #222;
   --font-text:#c8c8c8;
