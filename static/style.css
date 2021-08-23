@@ -2,8 +2,8 @@
 @import url("https://db.onlinewebfonts.com/c/87199e44ea4ccb4927b1ceca605b03bc?family=Joystick");
 @font-face {
   font-family: "Joystick";
-  src: url("//db.onlinewebfonts.com/t/87199e44ea4ccb4927b1ceca605b03bc.eot");
-  src: url("//db.onlinewebfonts.com/t/87199e44ea4ccb4927b1ceca605b03bc.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/87199e44ea4ccb4927b1ceca605b03bc.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/87199e44ea4ccb4927b1ceca605b03bc.woff") format("woff"), url("//db.onlinewebfonts.com/t/87199e44ea4ccb4927b1ceca605b03bc.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/87199e44ea4ccb4927b1ceca605b03bc.svg#Joystick") format("svg");
+  src: url("https://db.onlinewebfonts.com/t/87199e44ea4ccb4927b1ceca605b03bc.eot");
+  src: url("https://db.onlinewebfonts.com/t/87199e44ea4ccb4927b1ceca605b03bc.eot?#iefix") format("embedded-opentype"), url("https://db.onlinewebfonts.com/t/87199e44ea4ccb4927b1ceca605b03bc.woff2") format("woff2"), url("https://db.onlinewebfonts.com/t/87199e44ea4ccb4927b1ceca605b03bc.woff") format("woff"), url("https://db.onlinewebfonts.com/t/87199e44ea4ccb4927b1ceca605b03bc.ttf") format("truetype"), url("https://db.onlinewebfonts.com/t/87199e44ea4ccb4927b1ceca605b03bc.svg#Joystick") format("svg");
 }
 
 .dark:root {
