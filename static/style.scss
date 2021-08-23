@@ -2,7 +2,9 @@
 @font-face {
     font-family: 'Joystick';
     src: url("./static/Joystick.woff") format("woff"),
-        url("./static/Joystick.otf") format("woff");
+        url("./static/Joystick.otf") format("otf"),
+        url("./static/Joystick.ttf") format("ttf");
+
 }
 
 .dark:root {

@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap");
 @font-face {
   font-family: 'Joystick';
-  src: url("./static/Joystick.woff") format("woff"), url("./static/Joystick.otf") format("woff");
+  src: url("./static/Joystick.woff") format("woff"), url("./static/Joystick.otf") format("otf"), url("./static/Joystick.ttf") format("ttf");
 }
 
 .dark:root {
