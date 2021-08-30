@@ -1,9 +1,6 @@
-@import url("https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap");
-@import url("https://db.onlinewebfonts.com/c/87199e44ea4ccb4927b1ceca605b03bc?family=Joystick");
 @font-face {
-  font-family: "Joystick";
-  src: url("https://db.onlinewebfonts.com/t/87199e44ea4ccb4927b1ceca605b03bc.eot");
-  src: url("https://db.onlinewebfonts.com/t/87199e44ea4ccb4927b1ceca605b03bc.eot?#iefix") format("embedded-opentype"), url("https://db.onlinewebfonts.com/t/87199e44ea4ccb4927b1ceca605b03bc.woff2") format("woff2"), url("https://db.onlinewebfonts.com/t/87199e44ea4ccb4927b1ceca605b03bc.woff") format("woff"), url("https://db.onlinewebfonts.com/t/87199e44ea4ccb4927b1ceca605b03bc.ttf") format("truetype"), url("https://db.onlinewebfonts.com/t/87199e44ea4ccb4927b1ceca605b03bc.svg#Joystick") format("svg");
+  font-family: "Lettera Text Std";
+  src: url("fonts/lineto-lettera-pro-light.woff") format("woff");
 }
 
 .dark:root {
@@ -13,25 +10,41 @@
 }
 
 .light:root {
-  --portfolio-bg: #f9f8f7;
+  --portfolio-bg: #F5F5F5;
   --font-text:#525257;
-  --font-heading: #333;
+  --font-heading: rgba(0,0,0,.8);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+html {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 body {
   background-color: var(--portfolio-bg);
-  font-family: 'Share Tech Mono', Monospace, Courier;
   color: var(--font-text);
-  letter-spacing: 0.1px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -webkit-transition: background 0.2s ease;
+  transition: background 0.2s ease;
 }
 
-.container {
+.app-container {
+  font-family: 'Lettera Text Std', monospace;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 3% 20% 57% 20%;
+      grid-template-columns: 3% 20% 57% 20%;
+  letter-spacing: 1.7px;
+  height: 100%;
+}
+
+.numbers {
+  font-size: 0.7rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -39,57 +52,88 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  padding-left: 10px;
+  padding-top: 9px;
+  color: #67676e;
+  overflow-y: hidden;
 }
 
-.portfolio {
-  width: 100%;
-  max-width: 900px;
+.numbers .number {
+  padding-top: 20px;
 }
 
-.portfolio-header {
+aside {
+  line-height: 1.6;
+  font-size: .5rem;
+  height: 100%;
+}
+
+aside h1 {
+  padding: 1rem 0 .85rem 3rem;
+  font-weight: 400;
+  font-size: 1.1875rem;
+  margin: 0;
+  color: var(--font-heading);
+}
+
+aside .header-info {
+  list-style: none;
+  margin-left: 3rem;
+  font-size: 0.75rem;
+  line-height: 1.642;
+  text-transform: uppercase;
+  width: 45%;
+}
+
+aside .header-info li {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  width: 100%;
-  padding-top: 20px;
-  padding-bottom: 10px;
 }
 
-.portfolio-header .logo {
+article {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  font-weight: 500;
-  font-size: 23px;
-  font-smooth: always;
-  border: 3px solid var(--font-text);
-  border-radius: 5px;
-  color: var(--font-text);
-  height: 30px;
-  width: 30px;
-  font-family: 'Joystick';
+  font-size: 1.5rem;
+  overflow-y: scroll;
+  -ms-overflow-style: none;
+  /* Internet Explorer 10+ */
+  scrollbar-width: none;
+  /* Firefox */
 }
 
-.portfolio-header .switch {
-  font-size: 23px;
-  cursor: pointer;
+.introduction {
+  background: #b9fcc0;
 }
 
-.portfolio-content {
-  font-size: 17px;
-  width: 100%;
+.blink {
+  -webkit-animation: blinker 0.7s linear infinite;
+          animation: blinker 0.7s linear infinite;
+}
+
+@-webkit-keyframes blinker {
+  50% {
+    opacity: 0;
+  }
+}
+
+@keyframes blinker {
+  50% {
+    opacity: 0;
+  }
+}
+
+.right-side {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -98,24 +142,46 @@ body {
           justify-content: center;
 }
 
-.portfolio-content .content-container {
-  width: 100%;
+.bulb {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  cursor: pointer;
+  padding: 1rem 0 .85rem 3rem;
 }
 
-.portfolio-content .content-container .content-heading {
-  margin-top: 20px;
-  margin-bottom: 20px;
-  color: var(--font-heading);
-  font-weight: 400;
+.bulb svg {
+  -webkit-transition: all 0.3s linear;
+  transition: all 0.3s linear;
+  margin: 8px 0 0 8px;
+  fill: none;
 }
 
-.portfolio-content .content-container .content-text {
-  line-height: 28px;
-  text-align: justify;
+.bulb svg path {
+  stroke: #fdbf05;
+  stroke-width: 2;
+  stroke-linecap: round;
+  -webkit-transition: all 0.2s linear;
+  transition: all 0.2s linear;
 }
 
-svg {
-  width: 20px;
-  height: 20px;
+.bulb svg path.light {
+  stroke: #fdbf05;
+  stroke-dasharray: 5px;
+  stroke-dashoffset: 0;
+}
+
+.bulb.off svg {
+  -webkit-transform: translateY(-2px);
+          transform: translateY(-2px);
+}
+
+.bulb.off path {
+  padding: 1rem 0 .85rem 3rem;
+  stroke: #8f8f8f;
+}
+
+.bulb.off path.light {
+  stroke-dashoffset: 5px;
 }
 /*# sourceMappingURL=style.css.map */

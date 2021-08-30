@@ -1,8 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
-@font-face {font-family: "Joystick"; src: url("fonts/87199e44ea4ccb4927b1ceca605b03bc.eot"); src: url("fonts/87199e44ea4ccb4927b1ceca605b03bc.eot?#iefix") format("embedded-opentype"),
-     url("fonts/87199e44ea4ccb4927b1ceca605b03bc.woff2") format("woff2"),
-     url("fonts/87199e44ea4ccb4927b1ceca605b03bc.woff") format("woff"),
-     url("fonts/87199e44ea4ccb4927b1ceca605b03bc.ttf") format("truetype"); } 
+
+// @import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@200&display=swap');
+// @import url('https://fonts.googleapis.com/css2?family=Space+Mono&display=swap');
+@font-face {font-family: "Lettera Text Std"; src: url("fonts/lineto-lettera-pro-light.woff") format("woff"); }
 
 .dark:root {
     --portfolio-bg: #222;
@@ -11,89 +10,136 @@
 }
 
 .light:root {
-    --portfolio-bg: #f9f8f7;
+    --portfolio-bg: #F5F5F5;
     --font-text:#525257;
-    --font-heading: #333;
+    --font-heading: rgba(0,0,0,.8);
 }
 
+*{
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
 
-
+html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    
+}
 body{
     background-color: var(--portfolio-bg);
-    font-family: 'Share Tech Mono', Monospace, Courier;
     color: var(--font-text);
-    letter-spacing: 0.1px;
-    display: flex;
-    justify-content: center;
-    // transition: all 300ms linear;
+    transition: background 0.2s ease;
+}
+.app-container{
+    font-family: 'Lettera Text Std', monospace;
+    display: grid;
+    grid-template-columns: 3% 20% 57% 20%;
+    letter-spacing: 1.7px;
+    height: 100%;
+    
 }
 
-
-
-.container{
+.numbers{
+    font-size: 0.7rem;
     display: flex;
     flex-direction: column;
+    padding-left: 10px;
+    padding-top: 9px;
+    color: #67676e;
+    overflow-y: hidden;
+    .number{
+        padding-top: 20px;
+    }
 }
+aside{
+    line-height: 1.6;
+    font-size: .5rem;
+    height: 100%;
 
-.portfolio{
-    width: 100%;
-    max-width: 900px;
-    
-}
-.portfolio-header{
-    
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 100%;
-    padding-top: 20px;
-    padding-bottom: 10px;
-
-    .logo{
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-weight: 500;
-        font-size: 23px;
-        font-smooth: always;
-        border: 3px solid var(--font-text);
-        border-radius: 5px;
-        color: var(--font-text);
-        height: 30px;
-        width: 30px;
-        font-family: 'Joystick';
+    h1{
+        padding: 1rem 0 .85rem 3rem;
+        font-weight: 400;
+        font-size: 1.1875rem;
+        margin: 0;
+        color: var(--font-heading);
     }
 
-    .switch{
-        font-size: 23px;
-        cursor: pointer;
+    .header-info{
+        list-style: none;
+        margin-left: 3rem;
+        font-size: 0.75rem;
+        line-height: 1.642;
+        text-transform: uppercase;
+        width: 45%;
+
+        li{
+            display: flex;
+            justify-content: space-between;
+        }
     }
-
-
 }
-.portfolio-content{
-    font-size: 17px;
-    width: 100%;
+
+article{
     display: flex;
     justify-content: center;
-    .content-container{
-        
-        width:100%;
-        .content-heading{
-            margin-top: 20px;
-            margin-bottom: 20px;
-            color: var(--font-heading);
-            font-weight: 400;
-        }
-        .content-text{
-            line-height: 28px;
-            text-align: justify;
-        }
-        
+    align-items: center;
+    font-size: 1.5rem;
+    overflow-y: scroll;
+    -ms-overflow-style: none;  /* Internet Explorer 10+ */
+    scrollbar-width: none;  /* Firefox */
+    
+}
+
+.introduction{
+    background:#b9fcc0;
+}
+
+.blink{
+    animation: blinker 0.7s linear infinite;
+  }
+  
+  @keyframes blinker {
+    50% {
+      opacity: 0;
     }
 }
 
-svg{
-    width: 20px;
-    height: 20px;
+.right-side{
+    display: flex;
+    justify-content: center;
 }
+
+.bulb {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    cursor: pointer;
+    padding: 1rem 0 .85rem 3rem;
+  }
+  .bulb svg {
+    transition: all 0.3s linear;
+    margin: 8px 0 0 8px;
+    fill: none;
+  }
+  .bulb svg path {
+    stroke: #fdbf05;
+    stroke-width: 2;
+    stroke-linecap: round;
+    transition: all 0.2s linear;
+  }
+  .bulb svg path.light {
+    stroke: #fdbf05;
+    stroke-dasharray: 5px;
+    stroke-dashoffset: 0;
+  }
+
+  .bulb.off svg {
+    transform: translateY(-2px);
+  }
+  .bulb.off path {padding: 1rem 0 .85rem 3rem;
+    stroke: #8f8f8f;
+  }
+  .bulb.off path.light {
+    stroke-dashoffset: 5px;
+  }
