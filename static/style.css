@@ -113,7 +113,7 @@ article .intro {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  height: 100vh;
+  height: 80vh;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -124,7 +124,7 @@ article .intro {
 }
 
 article .intro p {
-  margin: 0 0 20px;
+  margin: 0 100px 20px;
 }
 
 article .intro p span {

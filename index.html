@@ -16,14 +16,30 @@
                 <div class="header-info-cell">User id:</div>
                 <div class="header-info-cell uid"></div>
             </li>
-            <li>
-                <div class="header-info-cell">Time:</div>
-                <div class="header-info-cell time"></div>
-            </li>
+            <li>&nbsp;</li>
+            <li>&nbsp;</li>
+            <li>&nbsp;</li>
+            <li>&nbsp;</li>
+            <li>&nbsp;</li>
+            <li>&nbsp;</li>
             <li>&nbsp;</li>
             <li>&nbsp;</li>
             <li>&nbsp;</li>
             <li>User Information</li>
+            <li>&nbsp;</li>
+            <li>
+                <div class="header-info-cell">Time:</div>
+                <div class="header-info-cell time"></div>
+            </li>
+            <li>
+                <div class="header-info-cell">Date:</div>
+                <div class="header-info-cell date"></div>
+            </li>
+            <li>
+                <div class="header-info-cell">Timezone:</div>
+                <div class="header-info-cell tz"></div>
+            </li>
+            <li>&nbsp;</li>
             <li>
                 <div class="header-info-cell">IP:</div>
                 <div class="header-info-cell ip"></div>
@@ -36,14 +52,18 @@
                 <div class="header-info-cell">Region:</div>
                 <div class="header-info-cell region"></div>
             </li>
-            <li>
-                <div class="header-info-cell">Timezone:</div>
-                <div class="header-info-cell tz"></div>
-            </li>
+            
+            <li>&nbsp;</li>
+            <li>&nbsp;</li>
+            <li>&nbsp;</li>
+            <li>&nbsp;</li>
+            <li>&nbsp;</li>
+            <li>&nbsp;</li>
             <li>&nbsp;</li>
             <li>&nbsp;</li>
             <li>&nbsp;</li>
             <li>Vivek's github stats</li>
+            <li>&nbsp;</li>
             <li>
                 <div class="header-info-cell">Username:</div>
                 <div class="header-info-cell username" style="text-transform: none"></div>
@@ -53,8 +73,12 @@
                 <div class="header-info-cell repos"></div>
             </li>
             <li>
-                <div class="header-info-cell">Total Commits:</div>
-                <div class="header-info-cell commits"></div>
+                <div class="header-info-cell">Followers:</div>
+                <div class="header-info-cell followers"></div>
+            </li>
+            <li>
+                <div class="header-info-cell">following:</div>
+                <div class="header-info-cell following"></div>
             </li>
         </ul>
     </aside>
@@ -115,10 +139,8 @@
         let data = await response.json().then(data => {
             document.querySelector('.username').innerHTML = data.login;
             document.querySelector('.repos').innerHTML = data.public_repos;
-        })
-        let response1 = await fetch(`https://api.github.com/users/viveksood97/events`)
-        let data1 = await response1.json().then(data1 => {
-            document.querySelector('.commits').innerHTML = data1.length;
+            document.querySelector('.followers').innerHTML = data.followers;
+            document.querySelector('.following').innerHTML = data.following;
         })
     }
 
@@ -139,6 +161,7 @@
         if (i == str.length) {
             clearInterval();
             document.querySelector('.intro').innerHTML = str;
+            return
 
         }
     }, 20);
@@ -152,7 +175,6 @@
         var h = ("0" + currentTime.getHours()).slice(-2);
         var m = ("0" + currentTime.getMinutes()).slice(-2);
         var s = ("0" + currentTime.getSeconds()).slice(-2);
-
         var twelvehr = "AM"
 
         if (h > 12) {
@@ -165,8 +187,8 @@
         }
 
         var timeString = `${h}:${m}:${s} ${twelvehr}`;
-        document.querySelector('.time').innerText = timeString;
-        document.querySelector('.time').textContent = timeString;
+        document.querySelector('.time').innerHTML = timeString;
+        document.querySelector('.date').textContent = currentTime.toDateString();
 
         setTimeout(showTime, 1000);
     }
