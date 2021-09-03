@@ -96,6 +96,7 @@ article{
     height: 80vh;
     justify-content: center;
     flex-direction: column;
+    padding-bottom: 20vh;
 
     p{
       margin: 0 100px 20px;
@@ -129,25 +130,22 @@ article{
   .project-container{
     display: flex;
     justify-content: center;
+    width: 100%;
   
 
   .projects{
-    list-style: outside none none;
-    padding: 0px;
-    margin: 50px 0px 0px;
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 15px;
-    
-    justify-content: center;
-    max-width: 1000px;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    grid-gap: 20px;
+    padding: 50px;
+    width: 100%;
 
     .project{
-      background-color: #f8f9fa;
-      min-height: 232px;
-      padding: 2rem 1.75rem;
-      border-radius: 4px;
-      border: 2px solid rgba(0,0,0,.8);
+      width: 100%;
+      // background-image: linear-gradient(to right, #f4f4f4, #f2f2f2, #f0f0f0, #eeeeee, #ececec);
+      background-color: #f8f8fc;
+      // padding: 2rem 1.75rem;
+      border-radius: 5px;
       box-shadow: 8px 14px 38px rgba(39, 44, 49, 0.06),
       1px 3px 8px rgba(39, 44, 49, 0.03);
     transition: all 0.5s ease;
@@ -159,7 +157,46 @@ article{
       transition: all 0.3s ease;
       transform: translate3D(0, -1px, 0);
     }
+    .content{
+      display: grid;
+      height: 100%;
+      grid-template-rows: 15% 15% 55% 35%;
+      padding: 2rem 1.75rem;
+      font-size: 20px;
+
+      .project-links{
+        display: flex;
+        justify-content: flex-end;
+        margin-bottom: 35px;
+        align-items: center;
+
+        .folder{
+          margin-right: auto;
+        }
+      }
+      .project-title{
+        margin: 0px 0px 10px;
+        font-size: 22px;
+      }
+      .project-description{
+        font-size: 17px;
+      }
+      .tech-stack{
+        display: flex;
+        justify-content: left;
+        list-style-type: none;
+        margin: 20px 0px 0px;
+
+        li{
+          line-height: 1.75;
+          font-size: 14px;
+          margin-right: 15px;
+        }
+      }
+
     }
+    }
+
 
   }
 
@@ -229,3 +266,5 @@ article{
   .bulb.off path.light {
     stroke-dashoffset: 5px;
   }
+
+  
