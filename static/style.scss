@@ -40,6 +40,7 @@ body{
     background-color: var(--portfolio-bg);
     color: var(--font-text);
     transition: background 0.2s ease;
+    overflow-y: hidden;
 }
 .app-container{
     //font-family: 'Roboto Mono', monospace;
@@ -47,7 +48,7 @@ body{
     //font-family: industry-inc-base, monospace;
     font-weight: 900;
     display: grid;
-    grid-template-columns: 3% 20% 57% 20%;
+    grid-template-columns: 3% 20% 67%;
     letter-spacing: 1.7px;
     height: 100%;
     
@@ -93,14 +94,16 @@ aside{
             display: flex;
             justify-content: space-between;
         }
+
+        
     }
 }
 
 article{
   font-size: 1.5rem;
   overflow-y: scroll;
-  -ms-overflow-style: none;  /* Internet Explorer 10+ */
-  scrollbar-width: none;  /* Firefox */
+  // -ms-overflow-style: none;  /* Internet Explorer 10+ */
+  // scrollbar-width: none;  /* Firefox */
   align-items: center;
   max-width: 1500px;
 
