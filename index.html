@@ -1,0 +1,110 @@
+<head>
+    <link rel="stylesheet" type="text/css" href="static/styles.css">
+    <!-- <script src="static/scrambling.js"></script> -->
+    <title>&#128578; Vivek Sood </title>
+</head>
+
+<body>
+    <div class="page-wrapper">
+        <div class="global-grid">
+            <div class="left">
+                <div class="line"></div>
+            </div>
+            <div class="main">
+                <div class="introduction">
+                    <h1>Vivek Sood</h1>
+                    <h2>I create interactive experiences with modern tech.</h2>
+                    <h3>You can follow me on Twitter, Twitch and GitHub. Here's my LinkedIn and Email.</h3>
+                </div>
+                <div class="project-wrapper">
+                    <div class="left-legend">
+                        <div class="data-source">
+                            [DATA SOURCE : Github] /// <br>viveksood97
+                        </div>
+                    </div>
+                    <div class="right-legend">
+                        <div class="data-source">
+                            PROJECTS ///.
+                        </div>
+                    </div>
+                    <div class="projects">
+                        <div class="wrapper">
+                            <div class="project">
+                                <div class="left-legend">
+                                    <div class="data-source">
+                                        INTERNAL_DOC_PREVIEW
+                                    </div>
+                                </div>
+                                <div class="content-wrapper"><div class="content">
+                                    ${title}<br>
+                                    ${content}
+                                </div></div>
+                                <div class="right-legend">
+                                    <div class="data-source">
+                                        904add5c-50c9-4a39-a945-36cb99cc3327
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+
+            </div>
+
+            <div class="right">
+                <div class="line"></div>
+                <!-- <div class="scroll-down">
+                    <div class="data-source">
+                        Scroll Down ->
+                    </div>
+                </div> -->
+            </div>
+        </div>
+    </div>
+</body>
+
+<script type="text/javascript">
+
+    async function get_readme(username,default_branch,title) {
+        let response = await fetch("https://raw.githubusercontent.com/viveksood97/beginner_tutorials/main/README.md?", { method: "GET", headers: { }, credentials: "same-origin" }).then(function(response) { response.status; response.statusText; response.headers; response.url; return response.text() }).catch(function(e) { console.error(e) })
+        return response
+    }
+    async function auto_update_projects() {
+        let response = await fetch(`https://api.github.com/users/viveksood97/repos`);
+        let data = await response.json().then(ele => {
+            ele.forEach(element => {
+                if (element.description !== null && element.description.includes("#")) {
+                        folder = "#";
+                        default_branch = element.default_branch;
+                        github = element.html_url;
+                        projectLink = "#";
+                        title = element.name;
+                        content = element.description;
+                        tech = "<li>Next.js</li><li>GitHub API</li><li>Chart.js</li>";
+                        string = ` <div class="project">
+                                <div class="left-legend">
+                                    <div class="data-source">
+                                        INTERNAL_DOC_PREVIEW
+                                    </div>
+                                </div>
+                                <div class="content-wrapper"><div class="content">
+                                    ${title}<br>
+                                    ${content}
+                                </div></div>
+                                <div class="right-legend">
+                                    <div class="data-source">
+                                        904add5c-50c9-4a39-a945-36cb99cc3327
+                                    </div>
+                                </div>
+                            </div>`;
+                        document.querySelector('.wrapper').innerHTML += string;
+                    
+                }
+            });
+        })
+    }
+    
+    //auto_update_projects()
+</script>
