@@ -132,9 +132,9 @@ $fs-l: 19px;
     --invert-portfolio-bg: white;
     --font-text: white;
     --invert-font-text: black;
-    --grid-color-primary: rgba(255, 255, 255, 0.08);
-    --grid-color-secondary: rgba(255, 255, 255, 0.04);
-    --font-vertical: rgba(255, 255, 255, 0.1);
+    --grid-color-primary: rgba(255, 255, 255, 0.1);
+    --grid-color-secondary: rgba(255, 255, 255, 0.07);
+    --font-vertical: rgba(255, 255, 255, 0.3);
     --switch-theme: rgba(0, 0, 0, 0.6);
 }
 
@@ -333,7 +333,7 @@ body {
                         .content {
                             height: 100%;
                             padding: 35px;
-                            background-color: rgba(0,0,0,0.5);
+                            background-color: rgba(0,0,0,0.9);
                         }
                        
                     }
@@ -350,12 +350,20 @@ body {
     &:after {
         content: "";
         width: 100%;
-        border-bottom: solid 2px var(--grid-color-secondary);
+        border-top: solid 2px var(--grid-color-secondary);
         position: absolute;
         left: 0;
         height: fit-content;
         z-index: 1;
     }
+}
+
+
+.footer{
+    width: 100%;
+    margin: 32px 0 16px;
+    padding: 16px 64px;
+    font-size: 20px;
 }
 
 .page-wrapper .global-grid {
