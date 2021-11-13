@@ -1,6 +1,5 @@
 <head>
     <link rel="stylesheet" type="text/css" href="static/styles.css">
-    <!-- <script src="static/scrambling.js"></script> -->
     <title>&#128578; Vivek Sood </title>
 </head>
 
@@ -12,7 +11,8 @@
             </div>
             <div class="main">
                 <div class="introduction">
-                    <h1>Vivek Sood</h1>
+                    <div class="white-block">04651202815 / 536f6f642056 / 117504279</div>
+                    <div class="name"><span>Vivek Sood</span></div>
                     <h2>I create interactive experiences with modern tech.</h2>
                     <h3>You can follow me on Twitter, Twitch and GitHub. Here's my LinkedIn and Email.</h3>
                 </div>
@@ -29,7 +29,7 @@
                     </div>
                     <div class="projects">
                         <div class="wrapper">
-                            <div class="project">
+                            <!-- <div class="project">
                                 <div class="left-legend">
                                     <div class="data-source">
                                         INTERNAL_DOC_PREVIEW
@@ -44,7 +44,7 @@
                                         904add5c-50c9-4a39-a945-36cb99cc3327
                                     </div>
                                 </div>
-                            </div>
+                            </div> -->
                         </div>
                     </div>
 
@@ -66,6 +66,7 @@
 </body>
 
 <script type="text/javascript">
+
 
     async function get_readme(username,default_branch,title) {
         let response = await fetch("https://raw.githubusercontent.com/viveksood97/beginner_tutorials/main/README.md?", { method: "GET", headers: { }, credentials: "same-origin" }).then(function(response) { response.status; response.statusText; response.headers; response.url; return response.text() }).catch(function(e) { console.error(e) })
@@ -106,5 +107,5 @@
         })
     }
     
-    //auto_update_projects()
+    auto_update_projects()
 </script>
