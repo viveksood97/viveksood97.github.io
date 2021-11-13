@@ -275,6 +275,8 @@ body {
   width: -moz-fit-content;
   width: fit-content;
   text-transform: uppercase;
+  float: left;
+  position: absolute;
 }
 
 .page-wrapper .global-grid .main .project-wrapper .left-legend .data-source {
@@ -293,12 +295,11 @@ body {
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
-  background-color: violet;
   text-transform: uppercase;
   -webkit-transform-origin: top right;
           transform-origin: top right;
-  -webkit-transform: rotate(90deg) translateY(-50%) translateX(100%);
-          transform: rotate(90deg) translateY(-50%) translateX(100%);
+  -webkit-transform: rotate(-90deg) translateY(-50%) translateX(-8%);
+          transform: rotate(-90deg) translateY(-50%) translateX(-8%);
 }
 
 .page-wrapper .global-grid .main .project-wrapper .right-legend .data-source {
@@ -333,6 +334,12 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .page-wrapper .global-grid .main .project-wrapper .projects .wrapper .project {
@@ -341,8 +348,21 @@ body {
   height: 368px;
   border: var(--grid-color-secondary) solid 2px;
   border-style: none solid;
-  background-color: black;
   margin-bottom: 64px;
+}
+
+.page-wrapper .global-grid .main .project-wrapper .projects .wrapper .project:hover {
+  --b:3px;
+  /* thickness of the border */
+  --c:#fefe33;
+  /* color of the border */
+  --w:15px;
+  /* width of border */
+  --g:#0000 90deg,var(--c) 0;
+  background: conic-gradient(from 90deg at top var(--b) left var(--b), var(--g)) 0 0, conic-gradient(from 180deg at top var(--b) right var(--b), var(--g)) 100% 0, conic-gradient(from 0deg at bottom var(--b) left var(--b), var(--g)) 0 100%, conic-gradient(from -90deg at bottom var(--b) right var(--b), var(--g)) 100% 100%;
+  background-size: var(--w) var(--w);
+  background-origin: border-box;
+  background-repeat: no-repeat;
 }
 
 .page-wrapper .global-grid .main .project-wrapper .projects .wrapper .project .right-legend .data-source {
@@ -360,18 +380,38 @@ body {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  color: white;
 }
 
 .page-wrapper .global-grid .main .project-wrapper .projects .wrapper .project .content-wrapper .content {
   background: url("https://cdna.artstation.com/p/assets/images/images/008/571/854/large/klaus-wittmann-overdrive-b-w.jpg?1513640413");
   background-size: cover;
   background-position: center;
-  opacity: 0.3;
   position: absolute;
   width: 100%;
+  padding: 35px;
   max-width: 800px;
   height: 100%;
-  border: var(--grid-color-primary) solid 1px;
+  border: var(--grid-color-primary) solid 0px;
+}
+
+.page-wrapper .global-grid .main .project-wrapper .projects .wrapper .project .content-wrapper ::before {
+  content: "";
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.page-wrapper .global-grid .main .project-wrapper .projects .wrapper .project .content-wrapper ::after {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  content: '';
+  border-top: 30px solid black;
+  border-right: 30px solid transparent;
 }
 
 .page-wrapper .global-grid .main .project-wrapper:after {

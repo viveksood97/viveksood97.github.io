@@ -243,6 +243,8 @@ body {
     .left-legend {
         width: fit-content;
         text-transform: uppercase;
+        float: left;
+        position:absolute;
 
         .data-source {
             color: var(--font-vertical);
@@ -256,10 +258,9 @@ body {
     .right-legend {
         float: right;
         width: fit-content;
-        background-color: violet;
         text-transform: uppercase;
         transform-origin: top right;
-        transform: rotate(90deg) translateY(-50%) translateX(100%);
+        transform: rotate(-90deg) translateY(-50%) translateX(-8%);
 
         .data-source {
             color: var(--font-vertical);
@@ -280,14 +281,35 @@ body {
             margin: 16px;
             display: flex;
             flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            
+            
             .project {
                 position: relative;
                 width: 900px;
                 height: 368px;
                 border: var(--grid-color-secondary) solid 2px;
                 border-style: none solid;
-                background-color: black;
                 margin-bottom: 64px;
+                &:hover {
+                    --b:3px;   /* thickness of the border */
+                    --c:#fefe33;   /* color of the border */
+                    --w:15px;  /* width of border */
+                    
+                  
+                    //border:var(--b) solid transparent; /* space for the border */
+                    --g:#0000 90deg,var(--c) 0;
+                    background:
+                      conic-gradient(from 90deg  at top    var(--b) left  var(--b),var(--g)) 0    0,
+                      conic-gradient(from 180deg at top    var(--b) right var(--b),var(--g)) 100% 0,
+                      conic-gradient(from 0deg   at bottom var(--b) left  var(--b),var(--g)) 0    100%,
+                      conic-gradient(from -90deg at bottom var(--b) right var(--b),var(--g)) 100% 100%;
+                    background-size:var(--w) var(--w);
+                    background-origin:border-box;
+                    background-repeat:no-repeat;
+                }
+                
                 .right-legend .data-source {
                     font-size: 16px;
                 }
@@ -296,16 +318,35 @@ body {
                     height: fit-content;
                     display: flex;
                     justify-content: center;
+                    color: white;
+                    
+                    
                     .content {
                         background: url("https://cdna.artstation.com/p/assets/images/images/008/571/854/large/klaus-wittmann-overdrive-b-w.jpg?1513640413");
-                        background-size: cover;
+                        background-size:cover;
                         background-position: center;
-                        opacity: 0.3;
                         position: absolute;
                         width: 100%;
+                        padding: 35px;
                         max-width: 800px;
                         height: 100%;
-                        border: var(--grid-color-primary) solid 1px;
+                        border: var(--grid-color-primary) solid 0px;
+                       
+                    }
+                    ::before {
+                        content: "";
+                        position: absolute;
+                        top: 0px;
+                        right: 0px;
+                        bottom: 0px;
+                        left: 0px;
+                        background-color: rgba(0,0,0,0.5);
+                        
+                    }
+                    ::after {
+                        position:absolute; left:0px; top:0px; content:'';
+                        border-top: 30px solid black; 
+                        border-right: 30px solid transparent;
                     }
                 }
             }
