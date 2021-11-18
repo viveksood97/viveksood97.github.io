@@ -10,11 +10,15 @@
                 <div class="line"></div>
             </div>
             <div class="main">
-                <div class="introduction">
-                    <div class="white-block">04651202815 / 536f6f642056 / 117504279</div>
-                    <div class="name"><span>Vivek Sood</span></div>
-                    <h2>I create interactive experiences with modern tech.</h2>
-                    <h3>You can follow me on Twitter, Twitch and GitHub. Here's my LinkedIn and Email.</h3>
+                <div class="introduction-wrapper">
+                    <div class="introduction">
+                        <div class="white-block">536f6f642056 / 831111111003286 / 117504279</div>
+                        <div class="name"><span>Vivek Sood</span></div>
+                        <div id="termynal"></div>
+                        <!-- <h2></h2>
+                        <h3></h3> -->
+                    </div>
+                    
                 </div>
                 <div class="project-wrapper">
                     <div class="left-legend">
@@ -49,31 +53,41 @@
                             </div> -->
                         </div>
                     </div>
-                   
+
 
                 </div>
                 <div class="footer-wrapper">
-                    <div class="footer">Built with ❤️</div> 
+                    <div class="footer">Built with ❤️, Inspired by: James Warner, Blocksphere</div>
                 </div>
             </div>
 
             <div class="right">
                 <div class="line"></div>
-                <!-- <div class="scroll-down">
-                    <div class="data-source">
-                        Scroll Down ->
-                    </div>
-                </div> -->
             </div>
         </div>
     </div>
 </body>
 
+
+<script src="static/js/termynal.js" data-termynal-container="#termynal"></script>
 <script type="text/javascript">
 
 
-    async function get_readme(username,default_branch,title) {
-        let response = await fetch("https://raw.githubusercontent.com/viveksood97/beginner_tutorials/main/README.md?", { method: "GET", headers: { }, credentials: "same-origin" }).then(function(response) { response.status; response.statusText; response.headers; response.url; return response.text() }).catch(function(e) { console.error(e) })
+
+
+
+var termynal = new Termynal('#termynal', {
+            typeDelay: 40,
+            lineDelay: 700,
+            lineData: [
+              { type: 'input', prompt: '>', value: '<h1>I create interactive experiences with modern tech.</h1>' },
+              { type: 'input', prompt: '>', value: "You can follow me on Twitter, Twitch and GitHub. Here's my LinkedIn and Email." },
+             
+            ]
+          });
+
+    async function get_readme(username, default_branch, title) {
+        let response = await fetch("https://raw.githubusercontent.com/viveksood97/beginner_tutorials/main/README.md?", { method: "GET", headers: {}, credentials: "same-origin" }).then(function (response) { response.status; response.statusText; response.headers; response.url; return response.text() }).catch(function (e) { console.error(e) })
         return response
     }
     async function auto_update_projects() {
@@ -81,14 +95,14 @@
         let data = await response.json().then(ele => {
             ele.forEach(element => {
                 if (element.description !== null && element.description.includes("#")) {
-                        folder = "#";
-                        default_branch = element.default_branch;
-                        github = element.html_url;
-                        projectLink = "#";
-                        title = element.name;
-                        content = element.description;
-                        tech = "<li>Next.js</li><li>GitHub API</li><li>Chart.js</li>";
-                        string = ` <div class="project">
+                    folder = "#";
+                    default_branch = element.default_branch;
+                    github = element.html_url;
+                    projectLink = "#";
+                    title = element.name;
+                    content = element.description;
+                    tech = "<li>Next.js</li><li>GitHub API</li><li>Chart.js</li>";
+                    string = ` <div class="project">
                                 <div class="left-legend">
                                     <div class="data-source">
                                         INTERNAL_DOC_PREVIEW
@@ -106,12 +120,12 @@
                                     </div>
                                 </div>
                             </div>`;
-                        document.querySelector('.wrapper').innerHTML += string;
-                    
+                    document.querySelector('.wrapper').innerHTML += string;
+
                 }
             });
         })
     }
-    
+
     auto_update_projects()
 </script>
