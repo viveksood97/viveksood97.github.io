@@ -1,4 +1,5 @@
 /* Box sizing rules */
+@import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@900&display=swap");
 *,
 *::before,
 *::after {
@@ -131,6 +132,35 @@ body::-webkit-scrollbar-thumb:hover {
   font-display: swap;
 }
 
+@font-face {
+  font-family: 'icomoon';
+  src: url("/static/fonts/icomoon.eot?flcv74");
+  src: url("/static/fonts/icomoon.eot?flcv74#iefix") format("embedded-opentype"), url("/static/fonts/icomoon.ttf?flcv74") format("truetype"), url("../fonts/icomoon.woff?flcv74") format("woff"), url("../fonts/icomoon.svg?flcv74#icomoon") format("svg");
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  font-style: normal;
+  line-height: 1;
+  /* Better Font Rendering =========== */
+}
+
+.icon-07:before {
+  content: "\e935";
+}
+
+.icon-jap_ban:before {
+  content: "\e90d";
+}
+
+.icon-globe:before {
+  content: "\e907";
+}
+
 :root {
   --portfolio-bg: black;
   --invert-portfolio-bg: white;
@@ -211,8 +241,8 @@ body {
 @media (min-width: 1650px) {
   .global-grid {
     max-width: 1920px;
-    -ms-grid-columns: [margin-left-start] 256px [margin-left-end main-start] minmax(auto, 1184px) [main-end margin-right-start] 256px [margin-right-end];
-        grid-template-columns: [margin-left-start] 256px [margin-left-end main-start] minmax(auto, 1184px) [main-end margin-right-start] 256px [margin-right-end];
+    -ms-grid-columns: [margin-left-start] 256px [margin-left-end main-start] minmax(auto, 1200px) [main-end margin-right-start] 256px [margin-right-end];
+        grid-template-columns: [margin-left-start] 256px [margin-left-end main-start] minmax(auto, 1200px) [main-end margin-right-start] 256px [margin-right-end];
   }
 }
 
@@ -220,14 +250,15 @@ body {
   grid-area: auto/main-start/auto/main-end;
 }
 
-.introduction {
+.box-single-legend {
   width: 100%;
   padding-top: 150px;
   padding-left: 20px;
+  padding-right: 20px;
   text-align: left;
 }
 
-.introduction:after {
+.box-single-legend:after {
   content: "";
   width: 100%;
   border-bottom: solid 2px var(--grid-color-secondary);
@@ -237,6 +268,19 @@ body {
   height: -moz-fit-content;
   height: fit-content;
   z-index: 1;
+}
+
+.introduction-content-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.introduction-content {
+  width: 100%;
 }
 
 .white-block {
@@ -351,7 +395,7 @@ body {
           align-items: center;
 }
 
-.project {
+.corner-box {
   position: relative;
   width: 900px;
   height: 368px;
@@ -360,7 +404,7 @@ body {
   margin-bottom: 64px;
 }
 
-.project:hover {
+.corner-box:hover {
   --b:3px;
   /* thickness of the border */
   --c:#fefe33;
@@ -374,11 +418,11 @@ body {
   background-repeat: no-repeat;
 }
 
-.project .right-legend .data-source {
+.corner-box .right-legend .data-source {
   font-size: 16px;
 }
 
-.project .content-wrapper {
+.corner-box-content-wrapper {
   width: 100%;
   height: -webkit-fit-content;
   height: -moz-fit-content;
@@ -392,7 +436,16 @@ body {
   color: white;
 }
 
-.project .content-wrapper .content-bg {
+.corner-box-content-wrapper ::after {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  content: '';
+  border-top: 30px solid black;
+  border-right: 30px solid transparent;
+}
+
+.corner-box-content-bg {
   background: url("https://cdna.artstation.com/p/assets/images/images/008/571/854/large/klaus-wittmann-overdrive-b-w.jpg?1513640413");
   background-size: cover;
   background-position: center;
@@ -403,23 +456,225 @@ body {
   border: var(--grid-color-primary) solid 0px;
 }
 
-.project .content-wrapper .content-bg .content {
+.corner-box-content {
   height: 100%;
   padding: 35px;
   background-color: rgba(0, 0, 0, 0.9);
 }
 
-.project .content-wrapper .content-bg .content:hover {
+.corner-box-content:hover {
   background-color: rgba(0, 0, 0, 0.5);
 }
 
-.project .content-wrapper ::after {
-  position: absolute;
-  left: 0px;
-  top: 0px;
-  content: '';
-  border-top: 30px solid black;
-  border-right: 30px solid transparent;
+.about-me-wrapper .box-single-legend {
+  padding: 0;
+}
+
+.experience-content-wrapper {
+  width: 100%;
+  padding: 100px 0 100px 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.simple-box-wrapper {
+  margin: auto;
+}
+
+.simple-box {
+  background: rgba(255, 255, 255, 0.02);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.card-content-left {
+  padding: 20px 0 20px 20px;
+}
+
+.card-content-right {
+  padding: 20px;
+  color: white;
+}
+
+.card-title {
+  font-family: "orbitron";
+  margin-bottom: 20px;
+  padding: 10px;
+  background: rgba(255, 255, 255, 0.02);
+  font-size: 40px;
+}
+
+.card-detail {
+  background: rgba(255, 255, 255, 0.02);
+  text-transform: uppercase;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.card-info {
+  padding: 20px;
+}
+
+.card-embellish {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  color: #969696;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.embellishment {
+  width: 120px;
+  line-height: 50px;
+  padding: 10px;
+  margin-bottom: 10px;
+  background: rgba(255, 255, 255, 0.02);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.holographic {
+  padding: 8px;
+  font-size: 12px;
+  width: 92px;
+  line-height: 10px;
+  border: 1.6px solid black;
+  background-image: url(/static/images/holographic.jpg);
+  background-position: center 0;
+  background-repeat: repeat;
+  background-size: 100% auto;
+}
+
+.icon-globe {
+  font-size: 40px;
+  margin: auto;
+  padding-left: 10px;
+}
+
+.about-me-content {
+  padding: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.about-me-content-heading {
+  margin-bottom: 25px;
+  font-size: 27px;
+  position: relative;
+}
+
+.about-me-experience-table {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-top: 45px;
+  margin-right: 70px;
+  text-align: left;
+  width: 100%;
+  border: 2px solid #212121;
+}
+
+.experience-table-title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-right: 2px solid #212121;
+  padding: 0 45px;
+}
+
+.experience-total {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-right: 2px solid #212121;
+}
+
+.experience-total span {
+  white-space: nowrap;
+  -webkit-transform: translateX(0) translateY(0) rotate(-90deg);
+          transform: translateX(0) translateY(0) rotate(-90deg);
+  color: #505050;
+}
+
+.experience-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  background: rgba(255, 255, 255, 0.02);
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  border-top: 2px solid #212121;
+  border-left: 2px solid #212121;
+  border-right: 2px solid #212121;
+  width: 100%;
+  height: 100%;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.experience-list .experience {
+  height: 70px;
+  padding: 0 40px 0 40px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  border-bottom: 2px solid #212121;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.expand-experience {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.expand-experience span {
+  white-space: nowrap;
+  -webkit-transform: translateX(0) translateY(0) rotate(-90deg);
+          transform: translateX(0) translateY(0) rotate(-90deg);
+  color: #505050;
 }
 
 .footer {
@@ -427,16 +682,6 @@ body {
   margin: 32px 0 16px;
   padding: 16px 64px;
   font-size: 20px;
-}
-
-.page-wrapper .global-grid .right {
-  width: 100%;
-  grid-area: auto/margin-right-start/auto/margin-right-end;
-}
-
-.page-wrapper .global-grid .left {
-  width: 100%;
-  grid-area: auto/margin-left-start/auto/margin-left-end;
 }
 
 .line {
@@ -469,9 +714,8 @@ body {
   width: 100%;
   font-size: 20px;
   border-radius: 4px;
-  padding: 0px 0px 0px;
+  padding: 0px 0px 100px;
   position: relative;
-  height: 150px;
 }
 
 [data-ty] {
