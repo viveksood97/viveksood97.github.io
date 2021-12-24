@@ -1,3 +1,6 @@
+<!DOCTYPE html>
+<html lang="en">
+
 <head>
     <link rel="stylesheet" type="text/css" href="static/styles.css">
     <title>&#128578; Vivek Sood </title>
@@ -19,18 +22,15 @@
                                 <div id="termynal"></div>
                             </div>
                             <img src="static/images/linkedin.png" style="width:280px;height:280px;" data-tilt="" />
+                            
                         </div>
-
-                        <!-- <img src = "static/images/frame.png" style="width:500px;height:500px;/> -->
-                        <!-- <h2></h2>
-                        <h3></h3> -->
                     </div>
                 </div>
-                <div class="project-wrapper">
+                <div class="project-wrapper work-ex">
 
                     <div class="left-legend">
                         <div class="data-source">
-                            [DATA SOURCE : Linkedin] /// <br>vivek-sood97
+                            DATA_SOURCE<br>Linkedin
                         </div>
                     </div>
                     <div class="right-legend">
@@ -39,75 +39,51 @@
                         </div>
                     </div>
                     <div class="box-double-legend">
-                            <div class="experience-wrapper">
+                        <div class="experience-wrapper">
                             <div class="experience-content-wrapper">
                                 <div class="experience-left">
-                                
+
                                     <div class="experience-list">
                                         <div class="experience-container">
                                             <div class="experience experience-active" onclick="toggleExperience(this)">
-                                                <div class="experience-item-wrapper"><div class="experience-index">#01</div><div class="experience-item">DIT</div></div></div>
+                                                <div class="experience-item-wrapper">
+                                                    <div class="experience-index">#01</div>
+                                                    <div class="experience-item">DIT</div>
+                                                </div>
+                                            </div>
                                         </div>
                                         <div class="experience-container">
                                             <div class="experience" onclick="toggleExperience(this)">
-                                                <div class="experience-item-wrapper"><div class="experience-index">#01</div><div class="experience-item">Rezoom</div></div></div>
+                                                <div class="experience-item-wrapper">
+                                                    <div class="experience-index">#02</div>
+                                                    <div class="experience-item">Rezoom</div>
+                                                </div>
+                                            </div>
                                         </div>
                                         <div class="experience-container">
                                             <div class="experience" onclick="toggleExperience(this)">
-                                                <div class="experience-item-wrapper"><div class="experience-index">#01</div><div class="experience-item">Airtel</div></div></div>
+                                                <div class="experience-item-wrapper">
+                                                    <div class="experience-index">#03</div>
+                                                    <div class="experience-item">Airtel</div>
+                                                </div>
+                                            </div>
                                         </div>
                                         <div class="experience-container">
                                             <div class="experience" onclick="toggleExperience(this)">
-                                                <div class="experience-item-wrapper"><div class="experience-index">#01</div><div class="experience-item">Analog Devices</div></div></div>
+                                                <div class="experience-item-wrapper">
+                                                    <div class="experience-index">#04</div>
+                                                    <div class="experience-item">Analog Devices</div>
+                                                </div>
+                                            </div>
                                         </div>
-    
+
                                     </div>
                                 </div>
                                 <div class="experience-right">
-                                    
-                                    <div class="card-detail">
-                                        <div class="card-info">
-                                            <div class="experience-title">Graduate Research Assistant <span>@ Maryland Robotics Center</span></div>
-                                            <div class="experience-duration">May 2020 - Present</div>
-                                            <div class="experience-details">
-                                                ▹Did this <br>
-                                                ▹And Did this <br>
-                                                ▹And Definitely this Did this <br>
-
-
-                                            </div>
-                                            
-                                            
-                                           
-                                        </div>
-    
-                                        <div class="card-embellish">
-                                            
-                                                <img src="static/images/logo-robotics.svg" style="width:400px;" data-tilt="" />
-                                            
-                                            <!-- <div class="embellishment" style="font-size: 14px;">
-                                                <i class="icon-07"></i>
-                                            </div>
-                                            
-    
-                                            <div class="embellishment" style="font-size: 25px;">
-                                                <div class="holo-embellishment">
-                                                    <div class="holographic">
-                                                        heheheh
-                                                    </div>
-                                                    <i class="icon-jap_ban"></i>
-                                                </div>
-    
-    
-                                               
-    
-                                            </div> -->
-    
-                                        </div>
-                                    </div>
+                                    <div class="card-detail" data-tilt></div>
                                 </div>
                             </div>
-                            </div>
+                        </div>
                     </div>
 
 
@@ -154,6 +130,7 @@
 
                 <div class="footer-wrapper">
                     <div class="footer">Built with ❤️, Inspired by: James Warner, Blocksphere</div>
+
                 </div>
             </div>
 
@@ -162,6 +139,7 @@
             </div>
         </div>
     </div>
+    </div>>
 </body>
 
 
@@ -170,14 +148,69 @@
 
 <script type="text/javascript">
 
+const details = {
+            "Rezoom": {
+                "title": "Graduate Student Researcher",
+                "organization": "Maryland Robotics Center",
+                "duration": "Jun 2021 - Present",
+                "details": ["Developed and shipped highly interactive web applications for Apple Music using Ember.js",
+                    "Built and shipped the Apple Music Extension within Facebook Messenger leveraging third-party and internal APIs",
+                    "Architected and implemented the front-end of Apple Music's embeddable web player widget, which lets users log in and listen to fdivl songs in the browser ",
+                    "Contributed extensively to MusicKit.js, a JavaScript framework that allows developers to add an Apple Music player to their web apps "]
+            },
+            "DIT": {
+                "title": "Student Software Developer",
+                "organization": "Department of Information Technology",
+                "duration": "Oct 2021 - Present",
+                "details": ["Developed and shipped highly interactive web applications for Apple Music using Ember.js",
+                    "Built and shipped the Apple Music Extension within Facebook Messenger leveraging third-party and internal APIs",
+                    "Architected and implemented the front-end of Apple Music's embeddable web player widget, which lets users log in and listen to fdivl songs in the browser ",
+                    "Contributed extensively to MusicKit.js, a JavaScript framework that allows developers to add an Apple Music player to their web apps "]
+            },
+            "Airtel": {
+                "title": "Network Automation Engineer",
+                "organization": "Bharti Airtel",
+                "duration": "Jun 2019 - Dec 2020",
+                "details": ["Developed and shipped highly interactive web applications for Apple Music using Ember.js",
+                    "Built and shipped the Apple Music Extension within Facebook Messenger leveraging third-party and internal APIs",
+                    "Architected and implemented the front-end of Apple Music's embeddable web player widget, which lets users log in and listen to fdivl songs in the browser ",
+                    "Contributed extensively to MusicKit.js, a JavaScript framework that allows developers to add an Apple Music player to their web apps "]
+            },
+            "Analog Devices": {
+                "title": "Project Intern",
+                "organization": "Analog Devices Inc.",
+                "duration": "Oct 2021 - Present",
+                "details": ["Developed and shipped highly interactive web applications for Apple Music using Ember.js",
+                    "Built and shipped the Apple Music Extension within Facebook Messenger leveraging third-party and internal APIs",
+                    "Architected and implemented the front-end of Apple Music's embeddable web player widget, which lets users log in and listen to fdivl songs in the browser ",
+                    "Contributed extensively to MusicKit.js, a JavaScript framework that allows developers to add an Apple Music player to their web apps "]
+            }
+        }
 
     function toggleExperience(e) {
         const experiences = document.querySelectorAll(".experience");
+        
+        var object = details[e.childNodes[1].childNodes[3].innerHTML]
+
+        var part_one = `<div class="card-info">
+            <div class="experience-title">${object.title}<span> @ ${object.organization}</span></div>
+            <div class="experience-duration">${object.duration}</div>`
+
+        var experienceDetails = "";
+        object.details.forEach(detail => {
+            experienceDetails += `<div class="experience-detail-item">${detail}</div>`
+        })
+
+        var part_two = `<div class="experience-details">${experienceDetails}</div></div>`
+
         for (let experience of experiences) {
             experience.classList.remove('experience-active');
         }
         e.classList.add('experience-active');
+        
+        document.querySelector(".card-detail").innerHTML = part_one + part_two;
     }
+    toggleExperience(document.querySelector(".experience-list").childNodes[1].childNodes[1])
 
 
     var termynal = new Termynal('#termynal', {
