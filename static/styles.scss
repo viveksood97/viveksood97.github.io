@@ -213,14 +213,14 @@ body {
     }
 }
 
-@media (min-width: 1366px) {
+@media (min-width: 1400px) {
     .global-grid {
         justify-content      : space-between;
         grid-template-columns: [margin-left-start] 160px [margin-left-end main-start] minmax(auto, 1184px) [main-end margin-right-start] 160px [margin-right-end];
     }
 }
 
-@media (min-width: 1650px) {
+@media (min-width: 1750px) {
     .global-grid {
         max-width            : 1920px;
         grid-template-columns: [margin-left-start] 256px [margin-left-end main-start] minmax(auto, 1200px) [main-end margin-right-start] 256px [margin-right-end];
@@ -251,8 +251,8 @@ body {
 
 .box-single-legend {
     width       : 100%;
-    padding-top : 150px;
-    padding-left: 20px;
+    padding: 150px 20px 0 20px;
+    min-width: 1035px;
     text-align  : left;
 
     &:after     {
@@ -269,11 +269,11 @@ body {
 .introduction-content-wrapper {
     display: flex;
     justify-content: space-between;
+    
 }
 
 .introduction-content {
-    width: 100%;
-    max-width: 900px;
+    width: 70%;
 }
 
 .white-block {
@@ -441,6 +441,7 @@ body {
 .experience-wrapper {
     position     : relative;
     margin-bottom: 64px;
+    margin-top: 64px;
     width: 100%;
 }
 
