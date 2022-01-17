@@ -300,11 +300,16 @@ body {
 
     .corner-box {
         pointer-events: none;
+        width: 100% !important;
+        max-width: none !important;
     }
 
-    .corner-box-content {
-        background-color: rgba(0, 0, 0, 0.5) !important;
+    .corner-box-content-bg {
+        width: 90% !important;
+        max-width: none !important;
     }
+
+
     .internal-grid {
         border-style: none !important;
     }
@@ -480,9 +485,9 @@ body {
     font-weight: 900;
     .heading {
         font-size: 40px;
-        font-family: Roboto Mono;
+        font-family: Blender Pro;
         line-height: 1;
-        font-weight: 550;
+        font-weight: 900;
         margin: auto 0;
         padding: 30px 20px 15px;
     }
@@ -610,7 +615,6 @@ body {
 
 .wrapper {
     width: 100%;
-    max-width: 900px;
     height: 100%;
     margin: 16px;
     display: flex;
