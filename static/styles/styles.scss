@@ -301,6 +301,10 @@ body {
     .corner-box {
         pointer-events: none;
     }
+
+    .corner-box-content {
+        background-color: rgba(0, 0, 0, 0.5) !important;
+    }
     .internal-grid {
         border-style: none !important;
     }
