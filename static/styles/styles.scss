@@ -624,8 +624,7 @@ body {
 
 .corner-box {
     position: relative;
-    width: 900px;
-    height: 368px;
+    height: 500px;
     border: var(--grid-color-secondary) solid 2px;
     border-style: none solid;
     margin-bottom: 64px;
@@ -633,6 +632,8 @@ body {
         transform: rotate(90deg) translateY(-50%) translateX(50%);
     }
     @media all and (min-width: 1200px) {
+        width: 90%;
+        height: 425px;
     &:hover {
         @include corner-border(3px,var(--accent-color),15px);
     }
@@ -640,7 +641,7 @@ body {
 }
 
 .corner-box .right-legend {
-    transform: rotate(-90deg) translateY(-50%) translateX(-8%);
+    transform: rotate(-90deg) translateY(-50%) translateX(-20%);
     .data-source {
         font-size: 16px;
     }
@@ -668,8 +669,7 @@ body {
     background-size: cover;
     background-position: center;
     position: absolute;
-    width: 100%;
-    max-width: 800px;
+    width: 90%;
     height: 100%;
     border: var(--grid-color-primary) solid 0px;
 }
