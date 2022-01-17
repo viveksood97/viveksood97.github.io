@@ -350,7 +350,7 @@ body {
     background-image: none !important;
   }
   .vs-wrapper {
-    left: 50px;
+    left: 87px;
   }
   .scroll-down {
     visibility: hidden;
@@ -476,7 +476,7 @@ body {
   font-family: Blender Pro;
 }
 
-.description .highlight {
+.highlight {
   background-color: var(--accent-color);
 }
 
@@ -567,6 +567,8 @@ body {
 
 .work-experience-box .triangle {
   position: absolute;
+  top: 0;
+  left: 0;
   border-top: 35px solid black;
   border-right: 35px solid transparent;
 }
@@ -657,10 +659,12 @@ body {
 
 .work-experience-content .work-experience-content-left .experience-duration {
   margin-bottom: 25px;
+  font-size: 19px;
 }
 
 .work-experience-content .work-experience-content-left .experience-details {
   list-style: none;
+  font-size: 18px;
 }
 
 .work-experience-content .work-experience-content-left .experience-detail-item {
@@ -680,6 +684,7 @@ body {
 }
 
 .work-experience-content .work-experience-content-right {
+  font-size: 16px;
   -webkit-writing-mode: vertical-lr;
       -ms-writing-mode: tb-lr;
           writing-mode: vertical-lr;
@@ -690,7 +695,7 @@ body {
 }
 
 .work-experience-footer {
-  font-size: 13px;
+  font-size: 16px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -765,8 +770,8 @@ body {
 }
 
 .corner-box .left-legend {
-  -webkit-transform: rotate(90deg) translateY(-50%) translateX(50%);
-          transform: rotate(90deg) translateY(-50%) translateX(50%);
+  -webkit-transform: rotate(90deg) translateY(-50%) translateX(40%);
+          transform: rotate(90deg) translateY(-50%) translateX(40%);
 }
 
 @media all and (min-width: 1200px) {

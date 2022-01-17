@@ -78,6 +78,7 @@ async function auto_update_projects() {
         ele.forEach(element => {
             if (element.description !== null && element.description.includes("#")) {
                 folder = "#";
+                id = element.id;
                 default_branch = element.default_branch;
                 github = element.html_url;
                 projectLink = "#";
@@ -87,7 +88,7 @@ async function auto_update_projects() {
                 string = ` <a class="corner-box" href=${github} target="_blank">
                             <div class="left-legend">
                                 <div class="data-source">
-                                    INTERNAL_DOC_PREVIEW
+                                    INTERNAL_DOC_ID: [${id}]
                                 </div>
                             </div>
                             <div class="corner-box-content-wrapper"><div class="corner-box-content-bg">

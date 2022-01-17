@@ -287,7 +287,7 @@ body {
         background-image: none !important;
     }
     .vs-wrapper {
-        left: 50px;
+        left: 87px;
         
     }
     .scroll-down {
@@ -400,9 +400,11 @@ body {
 .description {
     font-size: 22px;
     font-family: Blender Pro;
-    .highlight {
-        background-color: var(--accent-color);
-    }
+    
+}
+
+.highlight {
+    background-color: var(--accent-color);
 }
 
 .internal-grid {
@@ -472,6 +474,8 @@ body {
 
     .triangle {
         position: absolute;
+        top: 0;
+        left: 0;
         border-top: 35px solid black;
         border-right: 35px solid transparent;
     }
@@ -550,10 +554,12 @@ body {
 
         .experience-duration {
             margin-bottom: 25px;
+            font-size: 19px;
         }
 
         .experience-details {
             list-style: none;
+            font-size: 18px;
         }
 
         .experience-detail-item {
@@ -572,6 +578,7 @@ body {
         }
     }
     .work-experience-content-right {
+        font-size: 16px;
         writing-mode: vertical-lr;
         transform: rotate(180deg);
         border-right: 0.5px dashed;
@@ -580,7 +587,7 @@ body {
 }
 
 .work-experience-footer {
-    font-size: 13px;
+    font-size: 16px;
     display: flex;
     justify-content: space-between;
 }
@@ -629,7 +636,7 @@ body {
     border-style: none solid;
     margin-bottom: 64px;
     .left-legend {
-        transform: rotate(90deg) translateY(-50%) translateX(50%);
+        transform: rotate(90deg) translateY(-50%) translateX(40%);
     }
     @media all and (min-width: 1200px) {
         width: 90%;
