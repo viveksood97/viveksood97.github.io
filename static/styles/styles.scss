@@ -299,7 +299,6 @@ body {
     }
 
     .corner-box {
-        pointer-events: none;
         width: 100% !important;
         max-width: none !important;
     }
@@ -633,9 +632,11 @@ body {
     .left-legend {
         transform: rotate(90deg) translateY(-50%) translateX(50%);
     }
+    @media all and (min-width: 1200px) {
     &:hover {
         @include corner-border(3px,var(--accent-color),15px);
     }
+}
 }
 
 .corner-box .right-legend {
@@ -676,11 +677,14 @@ body {
 .corner-box-content {
     height: 100%;
     padding: 35px;
-    background-color: rgba(0, 0, 0, 0.9);
-
+    
+    background-color: rgba(0, 0, 0, 0.5);
+    @media all and (min-width: 1200px) {
+        background-color: rgba(0, 0, 0, 0.9);
     &:hover {
         background-color: rgba(0, 0, 0, 0.5);
     }
+}
 }
 
 .footer {

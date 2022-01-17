@@ -359,7 +359,6 @@ body {
     visibility: hidden;
   }
   .corner-box {
-    pointer-events: none;
     width: 100% !important;
     max-width: none !important;
   }
@@ -771,11 +770,13 @@ body {
           transform: rotate(90deg) translateY(-50%) translateX(50%);
 }
 
-.corner-box:hover {
-  background: conic-gradient(from 90deg at top 3px left 3px, #0000 90deg, var(--accent-color) 0) 0 0, conic-gradient(from 180deg at top 3px right 3px, #0000 90deg, var(--accent-color) 0) 100% 0, conic-gradient(from 0deg at bottom 3px left 3px, #0000 90deg, var(--accent-color) 0) 0 100%, conic-gradient(from -90deg at bottom 3px right 3px, #0000 90deg, var(--accent-color) 0) 100% 100%;
-  background-size: 15px 15px;
-  background-origin: border-box;
-  background-repeat: no-repeat;
+@media all and (min-width: 1200px) {
+  .corner-box:hover {
+    background: conic-gradient(from 90deg at top 3px left 3px, #0000 90deg, var(--accent-color) 0) 0 0, conic-gradient(from 180deg at top 3px right 3px, #0000 90deg, var(--accent-color) 0) 100% 0, conic-gradient(from 0deg at bottom 3px left 3px, #0000 90deg, var(--accent-color) 0) 0 100%, conic-gradient(from -90deg at bottom 3px right 3px, #0000 90deg, var(--accent-color) 0) 100% 100%;
+    background-size: 15px 15px;
+    background-origin: border-box;
+    background-repeat: no-repeat;
+  }
 }
 
 .corner-box .right-legend {
@@ -824,11 +825,16 @@ body {
 .corner-box-content {
   height: 100%;
   padding: 35px;
-  background-color: rgba(0, 0, 0, 0.9);
+  background-color: rgba(0, 0, 0, 0.5);
 }
 
-.corner-box-content:hover {
-  background-color: rgba(0, 0, 0, 0.5);
+@media all and (min-width: 1200px) {
+  .corner-box-content {
+    background-color: rgba(0, 0, 0, 0.9);
+  }
+  .corner-box-content:hover {
+    background-color: rgba(0, 0, 0, 0.5);
+  }
 }
 
 .footer {
