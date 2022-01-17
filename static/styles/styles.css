@@ -563,6 +563,7 @@ body {
       -ms-flex-direction: column;
           flex-direction: column;
   text-transform: uppercase;
+  position: relative;
 }
 
 .work-experience-box .triangle {
