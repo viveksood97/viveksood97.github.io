@@ -44,7 +44,7 @@ function insertOrgs() {
     orgs.forEach(org => {
         orgContainer.innerHTML += `<div class="checkbox" onclick="toggleExperience(this)">
                     <div class="input">
-                    <div class="label">${org}</div class="label">
+                    <div class="label">${org}</div>
                     </div>
                   </div>`
     })
@@ -79,6 +79,11 @@ async function auto_update_projects() {
             if (element.description !== null && element.description.includes("#")) {
                 folder = "#";
                 id = element.id;
+                topics = element.topics;
+                topicsString = `<div class="project-topics">`;
+                topics.forEach(topic => topicsString += `<span class="topics">${topic}</span>`);
+                topicsString += "</div>"
+                
                 default_branch = element.default_branch;
                 github = element.html_url;
                 projectLink = "#";
@@ -93,8 +98,13 @@ async function auto_update_projects() {
                             </div>
                             <div class="corner-box-content-wrapper"><div class="corner-box-content-bg">
                                 <div class="corner-box-content">
-                                    ${title}<br>
-                                ${content}</div>
+                                    <div class="project-top">
+                                        <h1 class="project-title">Project Name: ${title}</h1>
+                                        <p class="project-description">${content}</p>
+                                    </div>
+                                    ${topicsString}
+
+                            </div>
                                 
                             </div></div>
                             <div class="right-legend">
