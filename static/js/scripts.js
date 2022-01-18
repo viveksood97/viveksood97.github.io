@@ -1,8 +1,36 @@
+function diff_months(dt2, dt1) 
+ {
+
+  var diff =(dt2.getTime() - dt1.getTime()) / 1000;
+   diff /= (60 * 60 * 24 * 7 * 4);
+  return Math.abs(Math.round(diff));
+  
+ }
+
+ function getWords(monthCount) {
+    function getPlural(number, word) {
+        return number === 1 && word.one || word.other;
+    }
+
+    var months = { one: 'month', other: 'months' },
+        years = { one: 'year', other: 'years' },
+        m = monthCount % 12,
+        y = Math.floor(monthCount / 12),
+        result = [];
+
+    y && result.push(y + ' ' + getPlural(y, years));
+    m && result.push(m + ' ' + getPlural(m, months));
+    return result.join(' and ');
+}
+
+
 const details = {
     "Rezoom": {
         "title": "Graduate Student Researcher",
         "organization": "Maryland Robotics Center",
-        "duration": "Jun 2021 - Present",
+        "duration": "June 2021 - Present",
+        "website": "http://cdcl.umd.edu/",
+        "name": "ReZoom",
         "details": ["Developed and shipped highly interactive web applications for Apple Music using Ember.js",
             "Built and shipped the Apple Music Extension within Facebook Messenger leveraging third-party and internal APIs",
             "Architected and implemented the front-end of Apple Music's embeddable web player widget, which lets users log in and listen to fdivl songs in the browser ",
@@ -11,7 +39,8 @@ const details = {
     "DIT": {
         "title": "Student Software Developer",
         "organization": "Department of Information Technology",
-        "duration": "Oct 2021 - Present",
+        "duration": "October 2021 - January 2022",
+        "website": "https://www.analog.com/",
         "details": ["Developed and shipped highly interactive web applications for Apple Music using Ember.js",
             "Built and shipped the Apple Music Extension within Facebook Messenger leveraging third-party and internal APIs",
             "Architected and implemented the front-end of Apple Music's embeddable web player widget, which lets users log in and listen to fdivl songs in the browser ",
@@ -19,25 +48,29 @@ const details = {
     },
     "Airtel": {
         "title": "Network Automation Engineer",
-        "organization": "Bharti Airtel",
-        "duration": "Jun 2019 - Dec 2020",
-        "details": ["Developed and shipped highly interactive web applications for Apple Music using Ember.js",
-            "Built and shipped the Apple Music Extension within Facebook Messenger leveraging third-party and internal APIs",
-            "Architected and implemented the front-end of Apple Music's embeddable web player widget, which lets users log in and listen to fdivl songs in the browser ",
-            "Contributed extensively to MusicKit.js, a JavaScript framework that allows developers to add an Apple Music player to their web apps "]
+        "organization": "Airtel",
+        "duration": "June 2019 - December 2020",
+        "website": "https://www.airtel.in/",
+        "name": "Bharti Airtel Ltd.",
+        "details": ["Designed and developed a web-based inventory viewing utility (Ingress).",
+            "Developed an automatic end to end device connectivity verification for PAN India network",
+            "Architected an auto-ticketing and auto-resolving script for day to day network issues.",
+            "Developed and deployed business process model notation (BPMN) workflows for automation of network operation tasks.",
+        "Designed a python-based web application for the centralization of scripts required for daily tasks"]
     },
     "Analog Devices": {
         "title": "Project Intern",
-        "organization": "Analog Devices Inc.",
-        "duration": "Oct 2021 - Present",
-        "details": ["Developed and shipped highly interactive web applications for Apple Music using Ember.js",
-            "Built and shipped the Apple Music Extension within Facebook Messenger leveraging third-party and internal APIs",
-            "Architected and implemented the front-end of Apple Music's embeddable web player widget, which lets users log in and listen to fdivl songs in the browser ",
-            "Contributed extensively to MusicKit.js, a JavaScript framework that allows developers to add an Apple Music player to their web apps "]
+        "organization": "Analog Devices",
+        "duration": "June 2018 - September 2018",
+        "website": "https://www.analog.com/",
+        "name": "Analog Devices Inc.",
+        "details": ["Collaborated to develop and design a system to weigh vehicles in motion",
+            "Developed SPI driver for communication between AD4003(SAR ADC) and AD4050, STM32L476(Micro-controllers)",
+            "Built a configurable python based signal generator to mimic input signals",
+            "Built a test bench for testing and calibrating the system"]
     }
 }
-const orgs = ["DIT", "Rezoom", "Airtel", "Analog Devices"]
-const latestOrg = "DIT";
+const orgs = ["Rezoom", , "Airtel", "Analog Devices"]
 
 function insertOrgs() {
     let orgContainer = document.querySelector('.work-experience-list')
@@ -61,13 +94,20 @@ function toggleExperience(e) {
         experienceDetails += `<div class="experience-detail-item">${detail}</div>`
     })
 
+
     var part_two = `<div class="experience-details">${experienceDetails}</div></div>`
 
     for (let experience of experiences) {
         experience.classList.remove('checked');
     }
     e.childNodes[1].classList.add('checked');
+    var [dt1, dt2] = object.duration.split("-");
+    var dtF = (dt2 === " Present") ? new Date() : new Date(dt2) ;
+    let duration = diff_months(new Date(dt1), dtF) + 1
     document.querySelector(".work-experience-content-left").innerHTML = part_one + part_two;
+    document.querySelector(".work-experience-content-right").innerHTML = `duration: &nbsp;${getWords(duration)}`;
+    document.querySelector(".work-experience-footer-content").innerHTML = `<span class="part-one">Website: &nbsp;<a href="${object.website}" target="_blank">${object.website}</a></span>
+                                                <span class="part-two">Registered Name: &nbsp;${object.name}</span>`
 }
 insertOrgs();
 toggleExperience(document.querySelector(".work-experience-list").childNodes[1])
@@ -83,7 +123,7 @@ async function auto_update_projects() {
                 topicsString = `<div class="project-topics">`;
                 topics.forEach(topic => topicsString += `<span class="topics">${topic}</span>`);
                 topicsString += "</div>"
-                
+
                 default_branch = element.default_branch;
                 github = element.html_url;
                 projectLink = "#";
