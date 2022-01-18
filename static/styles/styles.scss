@@ -503,14 +503,19 @@ body {
 }
 
 .work-experience-list {
-    padding: 10px 20px;
+    padding: 20px 40px;
     border-bottom: 0.5px dashed;
-    font-size: 23px;
+    font-size: 30px;
+    @media all and (min-width: 700px) {
+        font-size: 23px;
+        padding: 10px 20px;
+    }
 }
 
 .checkbox {
     display: inline-block;
     cursor: pointer;
+    padding-right: 25px;
     //pointer-events: none;
     .checked {
         ::after {
@@ -524,6 +529,7 @@ body {
             transform: rotate(-45deg);
             top: 10px;
             border-radius: 5px;
+            
         }
     }
     .label {
@@ -533,10 +539,16 @@ body {
             content: "";
             position: absolute;
             border: 1px dashed;
-            width: 20px;
-            height: 20px;
+            width: 23px;
+            height: 23px;
             left: 0;
-            margin-top: 4px;
+            margin-top: 8px;
+            @media all and (min-width: 700px) {
+                width: 20px;
+                height: 20px;
+                margin-top: 4px;
+            }
+            
         }
 
     }
@@ -708,6 +720,7 @@ body {
     font-size: 28px;
     margin-bottom: 8px;
     margin-top: 10px;
+    text-transform: uppercase;
 }
 
 .project-description {
@@ -716,6 +729,7 @@ body {
 
 .project-topics {
     font-size: 19px;
+    text-transform: uppercase;
     .topics {
         padding-right:30px ;
     }

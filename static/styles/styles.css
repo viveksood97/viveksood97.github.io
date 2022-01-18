@@ -596,14 +596,22 @@ body {
 }
 
 .work-experience-list {
-  padding: 10px 20px;
+  padding: 20px 40px;
   border-bottom: 0.5px dashed;
-  font-size: 23px;
+  font-size: 30px;
+}
+
+@media all and (min-width: 700px) {
+  .work-experience-list {
+    font-size: 23px;
+    padding: 10px 20px;
+  }
 }
 
 .checkbox {
   display: inline-block;
   cursor: pointer;
+  padding-right: 25px;
 }
 
 .checkbox .checked ::after {
@@ -629,10 +637,18 @@ body {
   content: "";
   position: absolute;
   border: 1px dashed;
-  width: 20px;
-  height: 20px;
+  width: 23px;
+  height: 23px;
   left: 0;
-  margin-top: 4px;
+  margin-top: 8px;
+}
+
+@media all and (min-width: 700px) {
+  .checkbox .label:before {
+    width: 20px;
+    height: 20px;
+    margin-top: 4px;
+  }
 }
 
 .work-experience-content {
@@ -866,6 +882,7 @@ body {
   font-size: 28px;
   margin-bottom: 8px;
   margin-top: 10px;
+  text-transform: uppercase;
 }
 
 .project-description {
@@ -874,6 +891,7 @@ body {
 
 .project-topics {
   font-size: 19px;
+  text-transform: uppercase;
 }
 
 .project-topics .topics {
