@@ -129,6 +129,9 @@ async function auto_update_projects() {
                 projectLink = "#";
                 title = element.name;
                 content = element.description;
+                content = content.slice(0, -1)
+                bg = element.homepage;
+                bg = bg ? bg : "https://cdna.artstation.com/p/assets/images/images/008/571/854/large/klaus-wittmann-overdrive-b-w.jpg?1513640413";
                 tech = "<li>Next.js</li><li>GitHub API</li><li>Chart.js</li>";
                 string = ` <a class="corner-box" href=${github} target="_blank">
                             <div class="left-legend">
@@ -136,10 +139,10 @@ async function auto_update_projects() {
                                     INTERNAL_DOC_ID: [${id}]
                                 </div>
                             </div>
-                            <div class="corner-box-content-wrapper"><div class="corner-box-content-bg">
+                            <div class="corner-box-content-wrapper"><div class="corner-box-content-bg" style="background:url(${bg}); background-size:cover;">
                                 <div class="corner-box-content">
                                     <div class="project-top">
-                                        <h1 class="project-title">Project Name: ${title}</h1>
+                                        <h1 class="project-title">&nbsp;Project Name: ${title}&nbsp;</h1>
                                         <p class="project-description">${content}</p>
                                     </div>
                                     ${topicsString}
