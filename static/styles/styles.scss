@@ -163,6 +163,19 @@ $fs-l: 19px;
     --accent-color: #ff4d4d;
 }
 
+// :root {
+//     --portfolio-bg: white;
+//     --invert-portfolio-bg: black;
+//     --font-text: black;
+//     --invert-font-text: white;
+//     --grid-color-primary: rgba(255, 255, 255, 0.08);
+//     --grid-color-secondary: rgba(255, 255, 255, 0.05);
+//     --grid-dot-color: rgba(255, 255, 255, 0.25);
+//     --font-vertical: rgba(255, 255, 255, 0.15);
+//     --switch-theme: rgba(0, 0, 0, 0.6);
+//     --accent-color: #ff4d4d;
+// }
+
 /* mixins */
 
 @mixin corner-border($b, $c, $w) {
@@ -195,7 +208,7 @@ $fs-l: 19px;
     background-image: linear-gradient(90deg,var(--invert-font-text),var(--invert-font-text));
     background-repeat: no-repeat;
     background-position: 0 100%;
-    background-size: 100% 60%;
+    background-size: 100% 100%;
     width: fit-content;
     line-height: 1;
 }
@@ -741,12 +754,12 @@ body {
     margin-top: 10px;
     line-height: 1;
     text-transform: uppercase;
-    // @include underline;
+    @include underline;
 }
 
 .project-description {
     font-size: 19px;
-    // @include underline;
+    @include underline;
 }
 
 .project-topics {
@@ -755,7 +768,7 @@ body {
     .topics {
         margin-right:30px ;
         padding: 0 5px;
-        // @include underline;
+        @include underline;
     }
 }
 

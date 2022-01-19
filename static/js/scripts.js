@@ -1,3 +1,4 @@
+
 function diff_months(dt2, dt1) 
  {
 
@@ -102,8 +103,8 @@ function toggleExperience(e) {
     }
     e.childNodes[1].classList.add('checked');
     var [dt1, dt2] = object.duration.split("-");
-    var dtF = (dt2 === " Present") ? new Date() : new Date(dt2) ;
-    let duration = diff_months(new Date(dt1), dtF) + 1
+    var dtF = (dt2 === " Present") ? Date.today() : Date.parse(dt2) ;
+    let duration = diff_months(Date.parse(dt1), dtF) + 1
     document.querySelector(".work-experience-content-left").innerHTML = part_one + part_two;
     document.querySelector(".work-experience-content-right").innerHTML = `duration: &nbsp;${getWords(duration)}`;
     document.querySelector(".work-experience-footer-content").innerHTML = `<span class="part-one">Website: &nbsp;<a href="${object.website}" target="_blank">${object.website}</a></span>
