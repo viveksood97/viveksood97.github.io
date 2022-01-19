@@ -43,7 +43,7 @@ a:not([class]) {
 }
 
 a {
-    text-decoration:none;
+    text-decoration: none;
 }
 
 /* Make images easier to work with */
@@ -119,6 +119,14 @@ body::-webkit-scrollbar-thumb:hover {
 }
 
 @font-face {
+    font-family: Arame-Bold;
+    src: url(fonts/Arame-Bold.ttf) format("ttf"), url(fonts/Arame-Bold.woff) format("woff");
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
     font-family: Arame;
     src: url(fonts/Arame.ttf) format("ttf"), url(fonts/Arame.woff) format("woff");
     font-weight: 700;
@@ -127,18 +135,8 @@ body::-webkit-scrollbar-thumb:hover {
 }
 
 @font-face {
-    font-family: Arame-Bold;
-    src: url(fonts/Arame-Bold.ttf) format("ttf"), url(fonts/Arame-Bold.woff) format("woff");
-    font-weight: 700;
-    font-style: normal;
-    font-display: swap;
-}
-
-
-@font-face {
     font-family: Blender Pro;
-    src: url(fonts/BlenderPro-Bold.woff2) format("woff2"),
-        url(fonts/BlenderPro-Bold.woff) format("woff");
+    src: url(fonts/BlenderPro-Bold.woff2) format("woff2"), url(fonts/BlenderPro-Bold.woff) format("woff");
     font-weight: 900;
     font-style: normal;
     font-display: swap;
@@ -148,7 +146,6 @@ $fs-xxl: 74px;
 $fs-xl: 25px;
 $fs-m: 15px;
 $fs-l: 19px;
-
 
 :root {
     --portfolio-bg: black;
@@ -205,7 +202,7 @@ $fs-l: 19px;
 }
 
 @mixin underline {
-    background-image: linear-gradient(90deg,var(--invert-font-text),var(--invert-font-text));
+    background-image: linear-gradient(90deg, var(--invert-font-text), var(--invert-font-text));
     background-repeat: no-repeat;
     background-position: 0 100%;
     background-size: 100% 100%;
@@ -213,20 +210,18 @@ $fs-l: 19px;
     line-height: 1;
 }
 
-@mixin compatibleBorder ($left, $top, $right, $bottom){
-    
-    background-image:   repeating-linear-gradient(4deg, $left, $left 3px, transparent 3px, transparent 5px, $left 5px),
-                        repeating-linear-gradient(94deg, $top, $top 3px, transparent 3px, transparent 5px, $top 5px),
-                        repeating-linear-gradient(184deg, $right, $right 3px, transparent 3px, transparent 5px, $right 5px),
-                        repeating-linear-gradient(274deg, $bottom, $bottom 3px, transparent 3px, transparent 5px, $bottom 5px);
-    background-size: 1px 100%, 100% 1px, 1px 100% , 100% 1px;
+@mixin compatibleBorder($left, $top, $right, $bottom) {
+    background-image: repeating-linear-gradient(4deg, $left, $left 3px, transparent 3px, transparent 5px, $left 5px),
+        repeating-linear-gradient(94deg, $top, $top 3px, transparent 3px, transparent 5px, $top 5px),
+        repeating-linear-gradient(184deg, $right, $right 3px, transparent 3px, transparent 5px, $right 5px),
+        repeating-linear-gradient(274deg, $bottom, $bottom 3px, transparent 3px, transparent 5px, $bottom 5px);
+    background-size: 1px 100%, 100% 1px, 1px 100%, 100% 1px;
     background-position: 0 0, 0 0, 100% 0, 0 100%;
     background-repeat: no-repeat;
-        
 }
 
 /* mixins end */
- 
+
 body {
     font-family: Blender Pro;
     background-color: var(--portfolio-bg);
@@ -250,6 +245,44 @@ body {
     );
 }
 
+.loader {
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    
+
+    .vs {
+        width: fit-content;
+        height: fit-content;
+        padding: 10px 15px;
+        font-size: 45px;
+        @include corner-border(6px, white, 16px);
+        &::before,
+        &::after {
+            z-index: 1;
+            box-sizing: border-box;
+            content: "";
+            position: absolute;
+            border: 6px solid transparent;
+            animation-direction: alternate;
+            animation-timing-function: linear;
+        }
+        &::before {
+            top: 0;
+            left: 0;
+            animation: border-before 2s 2 forwards;
+            animation-direction: alternate;
+        }
+        &::after {
+            bottom: 0;
+            right: 0;
+            animation: border-after 2s 2 forwards;
+            animation-direction: alternate;
+        }
+    }
+}
+
 .vs-wrapper {
     position: absolute;
     width: 100%;
@@ -257,7 +290,6 @@ body {
     justify-content: center;
     align-items: center;
     margin-top: 3vh;
-    
 }
 .vs {
     padding: 5px 10px;
@@ -267,19 +299,18 @@ body {
     background-color: transparent;
     backdrop-filter: blur(4px);
     @include corner-border(4px, white, 12px);
-   
 }
 
 .scroll-down {
     position: absolute;
     text-transform: uppercase;
-        transform: rotate(180deg);
-        font-size: $fs-xl;
-        writing-mode: vertical-lr;
-        width: 100%;
-        height: 95vh;
-        display: flex;
-        align-items: center;
+    transform: rotate(180deg);
+    font-size: $fs-xl;
+    writing-mode: vertical-lr;
+    width: 100%;
+    height: 95vh;
+    display: flex;
+    align-items: center;
 }
 
 .white-block {
@@ -288,28 +319,44 @@ body {
     color: var(--invert-font-text);
     letter-spacing: 1px;
     font-size: $fs-m;
-    
+
     background-color: var(--invert-portfolio-bg);
 }
 
 .wave {
-    animation-name: wave-animation;  /* Refers to the name of your @keyframes element below */
-    animation-duration: 2.5s;        /* Change to speed up or slow down */
-    animation-iteration-count: infinite;  /* Never stop waving :) */
-    transform-origin: 70% 70%;       /* Pivot around the bottom-left palm */
+    animation-name: wave-animation; /* Refers to the name of your @keyframes element below */
+    animation-duration: 2.5s; /* Change to speed up or slow down */
+    animation-iteration-count: infinite; /* Never stop waving :) */
+    transform-origin: 70% 70%; /* Pivot around the bottom-left palm */
     display: inline-block;
-  }
-  
-  @keyframes wave-animation {
-      0% { transform: rotate( 0.0deg) }
-     10% { transform: rotate(14.0deg) }  /* The following five values can be played with to make the waving more or less extreme */
-     20% { transform: rotate(-8.0deg) }
-     30% { transform: rotate(14.0deg) }
-     40% { transform: rotate(-4.0deg) }
-     50% { transform: rotate(10.0deg) }
-     60% { transform: rotate( 0.0deg) }  /* Reset for the last half to pause */
-    100% { transform: rotate( 0.0deg) }
-  }
+}
+
+@keyframes wave-animation {
+    0% {
+        transform: rotate(0deg);
+    }
+    10% {
+        transform: rotate(14deg);
+    } /* The following five values can be played with to make the waving more or less extreme */
+    20% {
+        transform: rotate(-8deg);
+    }
+    30% {
+        transform: rotate(14deg);
+    }
+    40% {
+        transform: rotate(-4deg);
+    }
+    50% {
+        transform: rotate(10deg);
+    }
+    60% {
+        transform: rotate(0deg);
+    } /* Reset for the last half to pause */
+    100% {
+        transform: rotate(0deg);
+    }
+}
 
 /* UI Elements End */
 
@@ -327,15 +374,15 @@ body {
 }
 
 @media (max-width: 1200px) {
-    .global-grid{
+    .global-grid {
         grid-template-columns: [margin-left-start] 0px [margin-left-end main-start] auto [main-end margin-right-start] 0px [margin-right-end];
     }
-    .introduction-content, .introduction-content-right-border{
+    .introduction-content,
+    .introduction-content-right-border {
         background-image: none !important;
     }
     .vs-wrapper {
         left: 87px;
-        
     }
     .scroll-down {
         visibility: hidden;
@@ -355,19 +402,15 @@ body {
         max-width: none !important;
     }
 
-
     .internal-grid {
         border-style: none !important;
     }
-    
-    
 }
 
 @media (min-width: 1350px) {
     .global-grid {
         grid-template-columns: [margin-left-start] 144px [margin-left-end main-start] auto [main-end margin-right-start] 144px [margin-right-end];
     }
-   
 }
 
 @media (min-width: 1400px) {
@@ -384,10 +427,10 @@ body {
     }
 }
 
-.right, .left {
+.right,
+.left {
     position: relative;
 }
-
 
 .introduction-wrapper {
     grid-area: auto/main-start/auto/main-end;
@@ -398,14 +441,14 @@ body {
     width: 100%;
     min-width: 1035px;
     text-align: left;
-    &:after     {
-        content      : "";
-        width        : 100%;
+    &:after {
+        content: "";
+        width: 100%;
         border-bottom: solid 2px var(--grid-color-primary);
-        position     : absolute;
-        left         : 0;
-        height       : fit-content;
-        z-index      : 1;
+        position: absolute;
+        left: 0;
+        height: fit-content;
+        z-index: 1;
     }
 }
 
@@ -448,7 +491,6 @@ body {
 .description {
     font-size: 22px;
     font-family: Blender Pro;
-    
 }
 
 .highlight {
@@ -462,7 +504,7 @@ body {
     border-style: none solid;
     width: 100%;
     margin-top: -1px;
-    @include corner-border(3px,var(--grid-color-primary),3px);
+    @include corner-border(3px, var(--grid-color-primary), 3px);
 
     &:after {
         content: "";
@@ -570,7 +612,6 @@ body {
             transform: rotate(-45deg);
             top: 10px;
             border-radius: 5px;
-            
         }
     }
     .label {
@@ -589,9 +630,7 @@ body {
                 height: 20px;
                 margin-top: 4px;
             }
-            
         }
-
     }
 }
 
@@ -621,7 +660,7 @@ body {
         }
 
         .experience-details {
-            transition: all .5s linear;
+            transition: all 0.5s linear;
             list-style: none;
             font-size: 18px;
         }
@@ -645,7 +684,7 @@ body {
         font-size: 16px;
         writing-mode: vertical-lr;
         transform: rotate(180deg);
-        @include compatibleBorder(transparent,transparent , var(--invert-font-text), transparent);
+        @include compatibleBorder(transparent, transparent, var(--invert-font-text), transparent);
         padding: 20px 10px;
     }
 }
@@ -657,12 +696,12 @@ body {
 }
 
 .work-experience-footer-content {
-    @include compatibleBorder(transparent,var(--invert-font-text) , transparent, transparent);
+    @include compatibleBorder(transparent, var(--invert-font-text), transparent, transparent);
     width: 100%;
     display: flex;
     align-items: center;
     .part-one {
-        @include compatibleBorder(transparent,transparent , var(--invert-font-text), transparent);
+        @include compatibleBorder(transparent, transpainfiniterent, var(--invert-font-text), transparent);
     }
     span {
         width: 50%;
@@ -705,10 +744,10 @@ body {
     @media all and (min-width: 1200px) {
         width: 90%;
         height: 425px;
-    &:hover {
-        @include corner-border(3px,var(--accent-color),15px);
+        &:hover {
+            @include corner-border(3px, var(--accent-color), 15px);
+        }
     }
-}
 }
 
 .corner-box .right-legend {
@@ -725,15 +764,12 @@ body {
     justify-content: center;
     color: var(--font-text);
 
-    ::after {
-        content: "";
+    .triangle {
         @include triangle();
     }
 }
 
 .corner-box-content-bg {
-    //background: url("https://cdna.artstation.com/p/assets/images/images/008/571/854/large/klaus-wittmann-overdrive-b-w.jpg?1513640413");
-    //background: url("https://i.ibb.co/12C10Z4/Screenshot-from-2022-01-18-12-40-36.png");
     background-size: cover;
     background-position: center;
     position: absolute;
@@ -744,42 +780,51 @@ body {
 
 .corner-box-content {
     height: 100%;
-    padding: 40px;
+    padding: 20px 40px;
     position: relative;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
 
-    background-color: rgba(0, 0, 0,0.6);
+    background-color: rgba(0, 0, 0, 0.6);
     @media all and (min-width: 1200px) {
         background-color: rgba(0, 0, 0, 0.9);
-    &:hover {
-        background-color: rgba(0, 0,0, 0.6);
+        &:hover {
+            background-color: rgba(0, 0, 0, 0.6);
+        }
     }
-}
 }
 
 .project-title {
     font-size: 28px;
-    margin-bottom: 8px;
     margin-top: 10px;
     line-height: 1;
+    padding: 10px;
+    margin-bottom: 8px;
     text-transform: uppercase;
-    @include underline;
+    backdrop-filter: blur(4px);
+    width: fit-content;
+    // @include underline;
 }
 
 .project-description {
     font-size: 19px;
-    @include underline;
+    padding: 10px;
+    backdrop-filter: blur(4px);
+    width: fit-content;
+    // @include underline;
 }
 
 .project-topics {
     font-size: 19px;
     text-transform: uppercase;
+    backdrop-filter: blur(4px);
+    width: fit-content;
     .topics {
-        margin-right:30px ;
-        padding: 0 5px;
-        @include underline;
+        margin-right: 30px;
+        padding: 10px;
+       
+        // @include underline;
     }
 }
 
@@ -788,4 +833,64 @@ body {
     margin: 32px 0 16px;
     padding: 16px 64px;
     font-size: 20px;
+}
+
+/* Keyframes */
+
+@keyframes border-before {
+    0% {
+        width: 0;
+        height: 0;
+        border-top-color: var(--font-text);
+        border-right-color: transparent;
+    }
+    12.49% {
+        border-right-color: transparent;
+    }
+    12.5% {
+        height: 0;
+        width: 100%;
+        border-top-color: var(--font-text);
+        border-right-color: var(--font-text);
+    }
+    25%,
+    100% {
+        width: 100%;
+        height: 100%;
+        border-top-color: var(--font-text);
+        border-right-color: var(--font-text);
+    }
+}
+
+@keyframes border-after {
+    0%,
+    24.99% {
+        width: 0;
+        height: 0;
+        border-left-color: transparent;
+        border-bottom-color: transparent;
+    }
+    25% {
+        width: 0;
+        height: 0;
+        border-left-color: transparent;
+        border-bottom-color: var(--font-text);
+    }
+    37.49% {
+        border-left-color: transparent;
+        border-bottom-color: var(--font-text);
+    }
+    37.5% {
+        height: 0;
+        width: 100%;
+        border-left-color: var(--font-text);
+        border-bottom-color: var(--font-text);
+    }
+    50%,
+    100% {
+        width: 100%;
+        height: 100%;
+        border-left-color: var(--font-text);
+        border-bottom-color: var(--font-text);
+    }
 }
