@@ -213,6 +213,18 @@ $fs-l: 19px;
     line-height: 1;
 }
 
+@mixin compatibleBorder ($left, $top, $right, $bottom){
+    
+    background-image:   repeating-linear-gradient(4deg, $left, $left 3px, transparent 3px, transparent 5px, $left 5px),
+                        repeating-linear-gradient(94deg, $top, $top 3px, transparent 3px, transparent 5px, $top 5px),
+                        repeating-linear-gradient(184deg, $right, $right 3px, transparent 3px, transparent 5px, $right 5px),
+                        repeating-linear-gradient(274deg, $bottom, $bottom 3px, transparent 3px, transparent 5px, $bottom 5px);
+    background-size: 1px 100%, 100% 1px, 1px 100% , 100% 1px;
+    background-position: 0 0, 0 0, 100% 0, 0 100%;
+    background-repeat: no-repeat;
+        
+}
+
 /* mixins end */
  
 body {
@@ -520,7 +532,6 @@ body {
 .work-experience-header {
     display: flex;
     justify-content: space-between;
-    border-bottom: 0.5px dashed;
     font-weight: 900;
     .heading {
         font-size: 40px;
@@ -534,7 +545,7 @@ body {
 
 .work-experience-list {
     padding: 20px 40px;
-    border-bottom: 0.5px dashed;
+    @include compatibleBorder(transparent, var(--invert-font-text), transparent, var(--invert-font-text));
     font-size: 30px;
     @media all and (min-width: 700px) {
         font-size: 23px;
@@ -634,7 +645,7 @@ body {
         font-size: 16px;
         writing-mode: vertical-lr;
         transform: rotate(180deg);
-        border-right: 0.5px dashed;
+        @include compatibleBorder(transparent,transparent , var(--invert-font-text), transparent);
         padding: 20px 10px;
     }
 }
@@ -646,12 +657,12 @@ body {
 }
 
 .work-experience-footer-content {
-    border-top: 0.5px dashed;
+    @include compatibleBorder(transparent,var(--invert-font-text) , transparent, transparent);
     width: 100%;
     display: flex;
     align-items: center;
     .part-one {
-        border-right: 0.5px dashed;
+        @include compatibleBorder(transparent,transparent , var(--invert-font-text), transparent);
     }
     span {
         width: 50%;

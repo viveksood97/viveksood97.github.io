@@ -589,7 +589,6 @@ body {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  border-bottom: 0.5px dashed;
   font-weight: 900;
 }
 
@@ -604,7 +603,10 @@ body {
 
 .work-experience-list {
   padding: 20px 40px;
-  border-bottom: 0.5px dashed;
+  background-image: repeating-linear-gradient(4deg, transparent, transparent 3px, transparent 3px, transparent 5px, transparent 5px), repeating-linear-gradient(94deg, var(--invert-font-text), var(--invert-font-text) 3px, transparent 3px, transparent 5px, var(--invert-font-text) 5px), repeating-linear-gradient(184deg, transparent, transparent 3px, transparent 3px, transparent 5px, transparent 5px), repeating-linear-gradient(274deg, var(--invert-font-text), var(--invert-font-text) 3px, transparent 3px, transparent 5px, var(--invert-font-text) 5px);
+  background-size: 1px 100%, 100% 1px, 1px 100% , 100% 1px;
+  background-position: 0 0, 0 0, 100% 0, 0 100%;
+  background-repeat: no-repeat;
   font-size: 30px;
 }
 
@@ -720,7 +722,10 @@ body {
           writing-mode: vertical-lr;
   -webkit-transform: rotate(180deg);
           transform: rotate(180deg);
-  border-right: 0.5px dashed;
+  background-image: repeating-linear-gradient(4deg, transparent, transparent 3px, transparent 3px, transparent 5px, transparent 5px), repeating-linear-gradient(94deg, transparent, transparent 3px, transparent 3px, transparent 5px, transparent 5px), repeating-linear-gradient(184deg, var(--invert-font-text), var(--invert-font-text) 3px, transparent 3px, transparent 5px, var(--invert-font-text) 5px), repeating-linear-gradient(274deg, transparent, transparent 3px, transparent 3px, transparent 5px, transparent 5px);
+  background-size: 1px 100%, 100% 1px, 1px 100% , 100% 1px;
+  background-position: 0 0, 0 0, 100% 0, 0 100%;
+  background-repeat: no-repeat;
   padding: 20px 10px;
 }
 
@@ -735,7 +740,10 @@ body {
 }
 
 .work-experience-footer-content {
-  border-top: 0.5px dashed;
+  background-image: repeating-linear-gradient(4deg, transparent, transparent 3px, transparent 3px, transparent 5px, transparent 5px), repeating-linear-gradient(94deg, var(--invert-font-text), var(--invert-font-text) 3px, transparent 3px, transparent 5px, var(--invert-font-text) 5px), repeating-linear-gradient(184deg, transparent, transparent 3px, transparent 3px, transparent 5px, transparent 5px), repeating-linear-gradient(274deg, transparent, transparent 3px, transparent 3px, transparent 5px, transparent 5px);
+  background-size: 1px 100%, 100% 1px, 1px 100% , 100% 1px;
+  background-position: 0 0, 0 0, 100% 0, 0 100%;
+  background-repeat: no-repeat;
   width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -746,7 +754,10 @@ body {
 }
 
 .work-experience-footer-content .part-one {
-  border-right: 0.5px dashed;
+  background-image: repeating-linear-gradient(4deg, transparent, transparent 3px, transparent 3px, transparent 5px, transparent 5px), repeating-linear-gradient(94deg, transparent, transparent 3px, transparent 3px, transparent 5px, transparent 5px), repeating-linear-gradient(184deg, var(--invert-font-text), var(--invert-font-text) 3px, transparent 3px, transparent 5px, var(--invert-font-text) 5px), repeating-linear-gradient(274deg, transparent, transparent 3px, transparent 3px, transparent 5px, transparent 5px);
+  background-size: 1px 100%, 100% 1px, 1px 100% , 100% 1px;
+  background-position: 0 0, 0 0, 100% 0, 0 100%;
+  background-repeat: no-repeat;
 }
 
 .work-experience-footer-content span {
