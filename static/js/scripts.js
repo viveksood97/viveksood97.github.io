@@ -1,14 +1,13 @@
 
-function diff_months(dt2, dt1) 
- {
+function diff_months(dt2, dt1) {
 
-  var diff =(dt2.getTime() - dt1.getTime()) / 1000;
-   diff /= (60 * 60 * 24 * 7 * 4);
-  return Math.abs(Math.round(diff));
-  
- }
+    var diff = (dt2.getTime() - dt1.getTime()) / 1000;
+    diff /= (60 * 60 * 24 * 7 * 4);
+    return Math.abs(Math.round(diff));
 
- function getWords(monthCount) {
+}
+
+function getWords(monthCount) {
     function getPlural(number, word) {
         return number === 1 && word.one || word.other;
     }
@@ -57,7 +56,7 @@ const details = {
             "Developed an automatic end to end device connectivity verification for PAN India network",
             "Architected an auto-ticketing and auto-resolving script for day to day network issues.",
             "Developed and deployed business process model notation (BPMN) workflows for automation of network operation tasks.",
-        "Designed a python-based web application for the centralization of scripts required for daily tasks"]
+            "Designed a python-based web application for the centralization of scripts required for daily tasks"]
     },
     "Analog Devices": {
         "title": "Project Intern",
@@ -103,7 +102,7 @@ function toggleExperience(e) {
     }
     e.childNodes[1].classList.add('checked');
     var [dt1, dt2] = object.duration.split("-");
-    var dtF = (dt2 === " Present") ? Date.today() : Date.parse(dt2) ;
+    var dtF = (dt2 === " Present") ? Date.today() : Date.parse(dt2);
     let duration = diff_months(Date.parse(dt1), dtF) + 1
     document.querySelector(".work-experience-content-left").innerHTML = part_one + part_two;
     document.querySelector(".work-experience-content-right").innerHTML = `duration: &nbsp;${getWords(duration)}`;
@@ -113,6 +112,7 @@ function toggleExperience(e) {
 insertOrgs();
 toggleExperience(document.querySelector(".work-experience-list").childNodes[1])
 
+let projectObject = {};
 async function auto_update_projects() {
     let response = await fetch(`https://api.github.com/users/viveksood97/repos`);
     let data = await response.json().then(ele => {
@@ -121,8 +121,12 @@ async function auto_update_projects() {
                 folder = "#";
                 id = element.id;
                 topics = element.topics;
+                topicsArr = []
                 topicsString = `<div class="project-topics">`;
-                topics.forEach(topic => topicsString += `<span class="topics">${topic}</span>`);
+                topics.forEach(topic => {
+                    topicsArr.push(topic)
+                    topicsString += `<span class="topics">${topic}</span>`
+                });
                 topicsString += "</div>"
 
                 default_branch = element.default_branch;
@@ -133,6 +137,7 @@ async function auto_update_projects() {
                 content = content.slice(0, -1)
                 bg = element.homepage;
                 bg = bg ? bg : "https://cdna.artstation.com/p/assets/images/images/008/571/854/large/klaus-wittmann-overdrive-b-w.jpg?1513640413";
+                projectObject[id] = {"project-title":`Project: ${title}`, "project-description":content, "project-topics":topicsArr}
                 string = ` <a class="corner-box" href=${github} target="_blank">
                             <div class="left-legend">
                                 <div class="data-source">
@@ -141,13 +146,12 @@ async function auto_update_projects() {
                             </div>
                             <div class="corner-box-content-wrapper"><div class="corner-box-content-bg" style="background:url(${bg}); background-size:cover;">
                             <div class="triangle"></div>
-                                <div class="corner-box-content">
+                                <div class="corner-box-content" id="${id}" onmouseover="randomOnHover(this)" onmouseout="normalOnNotHover(this)">
                                     <div class="project-top">
-                                        <h1 class="project-title">&nbsp;Project Name: ${title}&nbsp;</h1>
+                                        <h1 class="project-title">Project: ${title}</h1>
                                         <p class="project-description">${content}</p>
                                     </div>
                                     ${topicsString}
-
                             </div>
                                 
                             </div></div>
@@ -166,6 +170,73 @@ async function auto_update_projects() {
 }
 
 auto_update_projects()
+
+const scrambleText = text => {
+    const randomInt = max => Math.floor(Math.random() * max)
+    const randomFromArray = array => array[randomInt(array.length)]
+    const chars = '*?><[]&@#)(.%$-_:/;?!'.split('')
+    return text
+        .split('')
+        .map(x => randomInt(3) > 1 ? randomFromArray(chars) : x)
+        .join('')
+}
+
+function scrambleHandler(e, id) {
+    let count = 0;
+    
+    let interval = setInterval(() => {
+        if (++count === 5) {
+            clearInterval(interval)
+            e.innerText = projectObject[id][e.className]
+        } else {
+            e.innerText = scrambleText(projectObject[id][e.className])
+        }
+    }
+
+        , 100)
+}
+
+function scrambleHandlerTopics(e, id, index) {
+    let count = 0;
+    let interval = setInterval(() => {
+        if (++count === 5) {
+            clearInterval(interval)
+            e.innerText = projectObject[id]["project-topics"][index].toUpperCase();
+        } else {
+            e.innerText = scrambleText(projectObject[id]["project-topics"][index].toUpperCase())
+        }
+    }
+
+        , 70)
+}
+
+
+
+function randomOnHover(e) {
+    let id = e.id
+    let index = 0;
+    
+    let arr = [e.querySelector("h1"), e.querySelector("p")]
+    let arrTopics = e.querySelectorAll("span")
+    
+    arr.forEach(ele => scrambleHandler(ele,id))
+    arrTopics.forEach(ele => {
+        scrambleHandlerTopics(ele,id,index)
+        index += 1
+    })
+    
+}
+
+function normalOnNotHover(e) {
+    let id = e.id
+    let arr = [e.querySelector("h1"), e.querySelector("p")]
+    arr.forEach(ele => scrambleHandler(ele,id))
+}
+
+
+
+
+
 
 
 

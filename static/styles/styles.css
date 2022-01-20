@@ -815,7 +815,7 @@ body {
 }
 
 .work-experience-footer-content .part-one {
-  background-image: repeating-linear-gradient(4deg, transparent, transparent 3px, transparent 3px, transparent 5px, transparent 5px), repeating-linear-gradient(94deg, transpainfiniterent, transpainfiniterent 3px, transparent 3px, transparent 5px, transpainfiniterent 5px), repeating-linear-gradient(184deg, var(--invert-font-text), var(--invert-font-text) 3px, transparent 3px, transparent 5px, var(--invert-font-text) 5px), repeating-linear-gradient(274deg, transparent, transparent 3px, transparent 3px, transparent 5px, transparent 5px);
+  background-image: repeating-linear-gradient(4deg, transparent, transparent 3px, transparent 3px, transparent 5px, transparent 5px), repeating-linear-gradient(94deg, transparent, transparent 3px, transparent 3px, transparent 5px, transparent 5px), repeating-linear-gradient(184deg, var(--invert-font-text), var(--invert-font-text) 3px, transparent 3px, transparent 5px, var(--invert-font-text) 5px), repeating-linear-gradient(274deg, transparent, transparent 3px, transparent 3px, transparent 5px, transparent 5px);
   background-size: 1px 100%, 100% 1px, 1px 100%, 100% 1px;
   background-position: 0 0, 0 0, 100% 0, 0 100%;
   background-repeat: no-repeat;
@@ -882,8 +882,8 @@ body {
     height: 425px;
   }
   .corner-box:hover {
-    background: conic-gradient(from 90deg at top 3px left 3px, #0000 90deg, var(--accent-color) 0) 0 0, conic-gradient(from 180deg at top 3px right 3px, #0000 90deg, var(--accent-color) 0) 100% 0, conic-gradient(from 0deg at bottom 3px left 3px, #0000 90deg, var(--accent-color) 0) 0 100%, conic-gradient(from -90deg at bottom 3px right 3px, #0000 90deg, var(--accent-color) 0) 100% 100%;
-    background-size: 15px 15px;
+    background: conic-gradient(from 90deg at top 4px left 4px, #0000 90deg, var(--accent-color) 0) 0 0, conic-gradient(from 180deg at top 4px right 4px, #0000 90deg, var(--accent-color) 0) 100% 0, conic-gradient(from 0deg at bottom 4px left 4px, #0000 90deg, var(--accent-color) 0) 0 100%, conic-gradient(from -90deg at bottom 4px right 4px, #0000 90deg, var(--accent-color) 0) 100% 100%;
+    background-size: 16px 16px;
     background-origin: border-box;
     background-repeat: no-repeat;
   }
@@ -959,11 +959,8 @@ body {
   font-size: 28px;
   margin-top: 10px;
   line-height: 1;
-  padding: 10px;
   margin-bottom: 8px;
   text-transform: uppercase;
-  -webkit-backdrop-filter: blur(4px);
-          backdrop-filter: blur(4px);
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
@@ -971,9 +968,6 @@ body {
 
 .project-description {
   font-size: 19px;
-  padding: 10px;
-  -webkit-backdrop-filter: blur(4px);
-          backdrop-filter: blur(4px);
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
@@ -982,8 +976,6 @@ body {
 .project-topics {
   font-size: 19px;
   text-transform: uppercase;
-  -webkit-backdrop-filter: blur(4px);
-          backdrop-filter: blur(4px);
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
@@ -991,7 +983,6 @@ body {
 
 .project-topics .topics {
   margin-right: 30px;
-  padding: 10px;
 }
 
 .footer {
