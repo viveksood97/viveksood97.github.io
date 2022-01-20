@@ -1,3 +1,4 @@
+feather.replace({ 'stroke-width': 3.2 });
 
 function diff_months(dt2, dt1) {
 
@@ -212,6 +213,8 @@ function scrambleHandlerTopics(e, id, index) {
 
 
 
+
+
 function randomOnHover(e) {
     let id = e.id
     let index = 0;
@@ -232,6 +235,31 @@ function normalOnNotHover(e) {
     let arr = [e.querySelector("h1"), e.querySelector("p")]
     arr.forEach(ele => scrambleHandler(ele,id))
 }
+
+window.addEventListener("scroll", () => {
+    let element =  document.querySelector('.scroll-down')
+    let distanceToTop = window.pageYOffset + element.getBoundingClientRect().top;
+	let scrollTop = document.documentElement.scrollTop;
+
+    var fontSize = 25;
+    
+	
+	let opacity = 1;
+    diff = scrollTop - distanceToTop;    
+	let diffOpacity = opacity - (diff / 500);
+    let diffFont = fontSize - (diff/70);
+	element.style.opacity = diffOpacity;
+	
+    if (diffFont < 0) {
+        element.style.fontSize = "0px";
+    }
+    else {
+        element.style.fontSize = `${diffFont}px`;
+    }
+    
+
+    
+});
 
 
 
