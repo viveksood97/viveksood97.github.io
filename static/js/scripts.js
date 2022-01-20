@@ -35,7 +35,7 @@ const details = {
         "details": ["REZOOM is an artificial intelligence (AI) logistics, operations, and management solution easily retrofitted to e-scooters and other micro mobility platforms to enable self-driving.",
             "Developing hardware and software for autonomous electric scooters.",
             "Architected and implemented a highly modular TCP based communication pipeline for varied data streams for IOT and Robotic applications.",
-            "Contributed extensively to the hardware prototyping for the autonomous scooter"]
+            "Contributed extensively to the hardware prototyping for the autonomous scooter."]
     },
     "DIT": {
         "title": "Student Software Developer",
@@ -54,10 +54,10 @@ const details = {
         "website": "https://www.airtel.in/",
         "name": "Bharti Airtel Ltd.",
         "details": ["Designed and developed a web-based inventory viewing utility (Ingress).",
-            "Developed an automatic end to end device connectivity verification for PAN India network",
+            "Developed an automatic end to end device connectivity verification for PAN India network.",
             "Architected an auto-ticketing and auto-resolving script for day to day network issues.",
             "Developed and deployed business process model notation (BPMN) workflows for automation of network operation tasks.",
-            "Designed a python-based web application for the centralization of scripts required for daily tasks"]
+            "Designed a python-based web application for the centralization of scripts required for daily tasks."]
     },
     "Analog Devices": {
         "title": "Project Intern",
@@ -65,10 +65,10 @@ const details = {
         "duration": "June 2018 - September 2018",
         "website": "https://www.analog.com/",
         "name": "Analog Devices Inc.",
-        "details": ["Collaborated to develop and design a system to weigh vehicles in motion",
-            "Developed SPI driver for communication between AD4003(SAR ADC) and AD4050, STM32L476(Micro-controllers)",
-            "Built a configurable python based signal generator to mimic input signals",
-            "Built a test bench for testing and calibrating the system"]
+        "details": ["Collaborated to develop and design a system to weigh vehicles in motion.",
+            "Developed SPI driver for communication between AD4003(SAR ADC) and AD4050, STM32L476(Micro-controllers).",
+            "Built a configurable python based signal generator to mimic input signals.",
+            "Built a test bench for testing and calibrating the system."]
     }
 }
 const orgs = ["Rezoom", , "Airtel", "Analog Devices"]
@@ -145,7 +145,7 @@ async function auto_update_projects() {
                                     INTERNAL_DOC_ID: [${id}]
                                 </div>
                             </div>
-                            <div class="corner-box-content-wrapper"><div class="corner-box-content-bg" style="background:url(${bg}); background-size:cover;">
+                            <div class="corner-box-content-wrapper"><div class="corner-box-content-bg" style="background:url(${bg}); background-size:cover; background-repeat:no-repeat">
                             <div class="triangle"></div>
                                 <div class="corner-box-content" id="${id}" onmouseover="randomOnHover(this)" onmouseout="normalOnNotHover(this)">
                                     <div class="project-top">
