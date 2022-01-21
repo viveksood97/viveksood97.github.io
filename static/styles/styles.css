@@ -204,7 +204,7 @@ body {
   height: fit-content;
   padding: 10px 15px;
   font-size: 45px;
-  background: conic-gradient(from 90deg at top 6px left 6px, #0000 90deg, white 0) 0 0, conic-gradient(from 180deg at top 6px right 6px, #0000 90deg, white 0) 100% 0, conic-gradient(from 0deg at bottom 6px left 6px, #0000 90deg, white 0) 0 100%, conic-gradient(from -90deg at bottom 6px right 6px, #0000 90deg, white 0) 100% 100%;
+  background: conic-gradient(from 90deg at top 6px left 6px, #0000 90deg, var(--font-text) 0) 0 0, conic-gradient(from 180deg at top 6px right 6px, #0000 90deg, var(--font-text) 0) 100% 0, conic-gradient(from 0deg at bottom 6px left 6px, #0000 90deg, var(--font-text) 0) 0 100%, conic-gradient(from -90deg at bottom 6px right 6px, #0000 90deg, var(--font-text) 0) 100% 100%;
   background-size: 16px 16px;
   background-origin: border-box;
   background-repeat: no-repeat;
@@ -264,7 +264,7 @@ body {
   background-color: transparent;
   -webkit-backdrop-filter: blur(4px);
           backdrop-filter: blur(4px);
-  background: conic-gradient(from 90deg at top 4px left 4px, #0000 90deg, white 0) 0 0, conic-gradient(from 180deg at top 4px right 4px, #0000 90deg, white 0) 100% 0, conic-gradient(from 0deg at bottom 4px left 4px, #0000 90deg, white 0) 0 100%, conic-gradient(from -90deg at bottom 4px right 4px, #0000 90deg, white 0) 100% 100%;
+  background: conic-gradient(from 90deg at top 4px left 4px, #0000 90deg, var(--font-text) 0) 0 0, conic-gradient(from 180deg at top 4px right 4px, #0000 90deg, var(--font-text) 0) 100% 0, conic-gradient(from 0deg at bottom 4px left 4px, #0000 90deg, var(--font-text) 0) 0 100%, conic-gradient(from -90deg at bottom 4px right 4px, #0000 90deg, var(--font-text) 0) 100% 100%;
   background-size: 12px 12px;
   background-origin: border-box;
   background-repeat: no-repeat;
@@ -294,7 +294,7 @@ body {
   padding: 4px;
   color: var(--invert-font-text);
   letter-spacing: 1px;
-  font-size: 15px;
+  font-size: 17px;
   background-color: var(--invert-portfolio-bg);
 }
 
@@ -610,7 +610,7 @@ body {
   color: var(--font-vertical);
   line-height: 17px;
   padding: 0 16px;
-  background-color: black;
+  background-color: var(--portfolio-bg);
 }
 
 .content-wrapper {
@@ -648,7 +648,7 @@ body {
   position: absolute;
   top: -1px;
   left: -1px;
-  border-top: 43px solid black;
+  border-top: 43px solid var(--portfolio-bg);
   border-right: 43px solid transparent;
 }
 
@@ -925,7 +925,7 @@ body {
   position: absolute;
   top: -1px;
   left: -1px;
-  border-top: 43px solid black;
+  border-top: 43px solid var(--portfolio-bg);
   border-right: 43px solid transparent;
 }
 

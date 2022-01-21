@@ -163,7 +163,7 @@ $fs-l: 19px;
 }
 
 // :root {
-//     --portfolio-bg: white;
+//     --portfolio-bg: grey;
 //     --invert-portfolio-bg: black;
 //     --font-text: black;
 //     --invert-font-text: white;
@@ -199,7 +199,7 @@ $fs-l: 19px;
     position: absolute;
     top: -1px;
     left: -1px;
-    border-top: 43px solid black;
+    border-top: 43px solid var(--portfolio-bg);
     border-right: 43px solid transparent;
 }
 
@@ -259,7 +259,7 @@ body {
         height: fit-content;
         padding: 10px 15px;
         font-size: 45px;
-        @include corner-border(6px, white, 16px);
+        @include corner-border(6px, var(--font-text), 16px);
         &::before,
         &::after {
             z-index: 1;
@@ -300,7 +300,7 @@ body {
     font-family: Arame-Bold;
     background-color: transparent;
     backdrop-filter: blur(4px);
-    @include corner-border(4px, white, 12px);
+    @include corner-border(4px, var(--font-text), 12px);
 }
 
 .scroll-down {
@@ -320,8 +320,7 @@ body {
     padding: 4px;
     color: var(--invert-font-text);
     letter-spacing: 1px;
-    font-size: $fs-m;
-
+    font-size: 17px;
     background-color: var(--invert-portfolio-bg);
 }
 
@@ -549,7 +548,7 @@ body {
     color: var(--font-vertical);
     line-height: 17px;
     padding: 0 16px;
-    background-color: black;
+    background-color: var(--portfolio-bg);
 }
 
 .content-wrapper {
