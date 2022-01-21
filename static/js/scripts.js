@@ -147,7 +147,8 @@ async function auto_update_projects() {
                             </div>
                             <div class="corner-box-content-wrapper"><div class="corner-box-content-bg" style="background:url(${bg}); background-size:cover; background-repeat:no-repeat">
                             <div class="triangle"></div>
-                                <div class="corner-box-content" id="${id}" onmouseover="randomOnHover(this)" onmouseout="normalOnNotHover(this)">
+                                <div class="corner-box-content" id="${id}">
+                                <div class="corner-box-content-cover" onmouseover="randomOnHover(this)" onmouseout="normalOnNotHover(this)"></div>
                                     <div class="project-top">
                                         <h1 class="project-title">Project: ${title}</h1>
                                         <p class="project-description">${content}</p>
@@ -215,7 +216,8 @@ function scrambleHandlerTopics(e, id, index) {
 
 
 
-function randomOnHover(e) {
+function randomOnHover(ele) {
+    let e = ele.parentNode;
     let id = e.id
     let index = 0;
     
@@ -230,10 +232,19 @@ function randomOnHover(e) {
     
 }
 
-function normalOnNotHover(e) {
-    let id = e.id
+function normalOnNotHover(ele) {
+    let e = ele.parentNode;
+    let id = e.id;
+    let index = 0;
     let arr = [e.querySelector("h1"), e.querySelector("p")]
     arr.forEach(ele => scrambleHandler(ele,id))
+    let arrTopics = e.querySelectorAll("span")
+    
+    arr.forEach(ele => scrambleHandler(ele,id))
+    arrTopics.forEach(ele => {
+        scrambleHandlerTopics(ele,id,index)
+        index += 1
+    })
 }
 
 window.addEventListener("scroll", () => {
