@@ -45,7 +45,8 @@ a:not([class]) {
 }
 
 a {
-  text-decoration: none;
+  color: inherit;
+  text-decoration: underline;
 }
 
 /* Make images easier to work with */
@@ -432,6 +433,14 @@ body {
   }
   .internal-grid {
     border-style: none !important;
+  }
+  .footer {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
   }
 }
 
@@ -998,6 +1007,10 @@ body {
   margin: 32px 0 16px;
   padding: 16px 10px;
   font-size: 20px;
+}
+
+.footer .google-terms {
+  font-size: 15px;
 }
 
 /* Keyframes */

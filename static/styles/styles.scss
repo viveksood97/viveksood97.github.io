@@ -43,7 +43,8 @@ a:not([class]) {
 }
 
 a {
-    text-decoration: none;
+    color: inherit;
+    text-decoration: underline;
 }
 
 /* Make images easier to work with */
@@ -404,6 +405,10 @@ body {
 
     .internal-grid {
         border-style: none !important;
+    }
+    .footer {
+        display: flex;
+        justify-content: center;
     }
 }
 
@@ -842,6 +847,9 @@ body {
     margin: 32px 0 16px;
     padding: 16px 10px;
     font-size: 20px;
+    .google-terms {
+        font-size: 15px;
+    }
 }
 
 /* Keyframes */
