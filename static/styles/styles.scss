@@ -40,11 +40,12 @@ body {
 /* A elements that don't have a class get default styles */
 a:not([class]) {
     text-decoration-skip-ink: auto;
+    color: inherit !important;
 }
 
 a {
-    color: inherit;
-    text-decoration: underline;
+    
+    text-decoration: underline !important;
 }
 
 /* Make images easier to work with */
