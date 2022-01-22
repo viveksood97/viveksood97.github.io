@@ -434,13 +434,8 @@ body {
   .internal-grid {
     border-style: none !important;
   }
-  .footer {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
+  .footer-wrapper {
+    padding: 0 64px;
   }
 }
 

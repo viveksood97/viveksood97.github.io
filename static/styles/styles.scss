@@ -406,9 +406,8 @@ body {
     .internal-grid {
         border-style: none !important;
     }
-    .footer {
-        display: flex;
-        justify-content: center;
+    .footer-wrapper {
+        padding: 0 64px;
     }
 }
 
