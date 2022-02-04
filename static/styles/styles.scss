@@ -144,13 +144,13 @@ body::-webkit-scrollbar-thumb:hover {
     font-display: swap;
 }
 
-@font-face {
-    font-family: Blender Pro Heavy;
-    src: url(fonts/BlenderPro-Heavy.woff2) format("woff2"), url(fonts/BlenderPro-Heavy.woff) format("woff"),url(fonts/BlenderPro-Heavy.ttf) format("ttf");
-    font-weight: 900;
-    font-style: normal;
-    font-display: swap;
-}
+// @font-face {
+//     font-family: Blender Pro Heavy;
+//     src: url(fonts/BlenderPro-Heavy.woff2) format("woff2"), url(fonts/BlenderPro-Heavy.woff) format("woff"),url(fonts/BlenderPro-Heavy.ttf) format("ttf");
+//     font-weight: 900;
+//     font-style: normal;
+//     font-display: swap;
+// }
 
 $fs-xxl: 74px;
 $fs-xl: 25px;
@@ -590,9 +590,9 @@ body {
     .heading {
         font-size: 43px;
         font-style: italic;
-        font-family: Blender Pro Heavy;
+        font-family: Blender Pro;
         line-height: 1;
-        font-weight: 100;
+        font-weight: 900;
         margin: auto 0;
         padding: 30px 20px 15px;
     }
