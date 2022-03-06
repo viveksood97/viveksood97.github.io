@@ -26,6 +26,17 @@ function getWords(monthCount) {
 
 
 const details = {
+    "Kick_Robotics": {
+        "title": "Robotics Intern",
+        "organization": "Kick Robotics",
+        "duration": "January 2022 - Present",
+        "website": "https://kickrobotics.com/",
+        "name": "Kick Robotics LLC.",
+        "details": ["Designing and supporting hardware and software for Watershed Aqua Bot, Warehouse Bot, Farm Bot",
+            "Implementing a cloud communication architecture for various robot",
+            "Developing the SLAM and perception capabilities of the mentioned robots",
+            "Designing software packages around ROS2(foxy) and microRos framework"]
+    },
     "Rezoom": {
         "title": "Graduate Student Researcher",
         "organization": "Maryland Robotics Center",
@@ -71,7 +82,7 @@ const details = {
             "Built a test bench for testing and calibrating the system."]
     }
 }
-const orgs = ["Rezoom", , "Airtel", "Analog Devices"]
+const orgs = ["Kick_Robotics", "Rezoom", "Airtel", "Analog Devices"]
 
 function insertOrgs() {
     let orgContainer = document.querySelector('.work-experience-list')
@@ -136,6 +147,7 @@ async function auto_update_projects() {
                 title = element.name;
                 content = element.description;
                 content = content.slice(0, -1)
+                content = content.split("<<")[0]
                 bg = element.homepage;
                 bg = bg ? bg : "https://cdna.artstation.com/p/assets/images/images/008/571/854/large/klaus-wittmann-overdrive-b-w.jpg?1513640413";
                 projectObject[id] = {"project-title":`Project: ${title}`, "project-description":content, "project-topics":topicsArr}
