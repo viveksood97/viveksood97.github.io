@@ -1,5 +1,7 @@
 feather.replace({ 'stroke-width': 3.2 });
 
+status = ["<In-progress>", "<Upcoming>", "<Completed>"]
+
 function diff_months(dt2, dt1) {
 
     var diff = (dt2.getTime() - dt1.getTime()) / 1000;
@@ -127,8 +129,18 @@ toggleExperience(document.querySelector(".work-experience-list").childNodes[1])
 let projectObject = {};
 async function auto_update_projects() {
     let response = await fetch(`https://api.github.com/users/viveksood97/repos`);
+    otherProjects = `<div class="other-projects">
+                        <div class="other-projects-main-container">`
+    
     let data = await response.json().then(ele => {
+        inprogress_count = 0
+        completed_count = 0
+        upcoming_count = 0
+        project_div = ""
         ele.forEach(element => {
+            if (element.description !== null && element.description.includes("<In-progress>")) {inprogress_count += 1}
+            else if (element.description !== null && element.description.includes("<Completed>")) {completed_count += 1}
+            else if (element.description !== null && element.description.includes("<Upcoming>")) {upcoming_count += 1}
             if (element.description !== null && element.description.includes("#")) {
                 folder = "#";
                 id = element.id;
@@ -151,7 +163,8 @@ async function auto_update_projects() {
                 bg = element.homepage;
                 bg = bg ? bg : "https://cdna.artstation.com/p/assets/images/images/008/571/854/large/klaus-wittmann-overdrive-b-w.jpg?1513640413";
                 projectObject[id] = {"project-title":`Project: ${title}`, "project-description":content, "project-topics":topicsArr}
-                string = ` <a class="corner-box" href=${github} target="_blank">
+                string = ` 
+                        <a class="corner-box" href=${github} target="_blank">
                             <div class="left-legend">
                                 <div class="data-source">
                                     INTERNAL_DOC_ID: [${id}]
@@ -171,15 +184,59 @@ async function auto_update_projects() {
                             </div></div>
                             <div class="right-legend">
                                 <div class="data-source">
-                                    904add5c-50c9-4a39-a945-36cb99cc3327
+                                    904add5c-[Click for github repository]
                                 </div>
                             </div>
                         </a>`;
-                document.querySelector('.wrapper').innerHTML += string;
+                project_div += string;
 
 
             }
+            else if (element.description !== null && element.description.includes("$")){
+                title = element.name;
+                otherProjects += ` <div class="other-project-wrapper">
+                                            <div class="other-project-content">
+                                                <div class="other-project-header">${title}</div>
+                                                <div class="other-project-sub-header">Description</div>
+                                                <div class="other-project-progress-wrapper">
+                                                    <div class="other-project-progress-header">Progress</div>
+                                                    <div class="other-project-progress-bar">
+                                                        <span class="other-project-progress" ,
+                                                            style="width: 60%; background-color: #ff9f2d;"></span>
+                                                    </div>
+                                                    <p class="other-project-progress-percentage">60%</p>
+                                                    <div class="other-project-topics-wrapper">
+                                                        <span class="other-project-topic" style="color: #fff;">ROS</span>
+                                                        <span class="other-project-topic" style="color: #fff;">ROS</span>
+                                                        <span class="other-project-topic" style="color: #fff;">ROS</span>
+                                                        <span class="other-project-topic" style="color: #fff;">ROS</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="other-project-cover"></div>
+                                        </div>`
+            }
         });
+        document.querySelector('.wrapper').innerHTML += ` 
+                    <div class="project-heading">
+                                    <div class="project-heading-title">PROJECTS</div>
+                                    <div class="project-status-container">
+                                        <div class="project-status">
+                                            <div class="project-status-number">${inprogress_count}</div>
+                                            <div class="project-status-title">In Progress</div>
+                                        </div>
+                                        <div class="project-status">
+                                            <div class="project-status-number">${upcoming_count}</div>
+                                            <div class="project-status-title">Upcoming</div>
+                                        </div>
+                                        <div class="project-status">
+                                            <div class="project-status-number">${completed_count}</div>
+                                            <div class="project-status-title">Completed</div>
+                                        </div>
+                                    </div>
+                                </div>`
+        document.querySelector('.wrapper').innerHTML += project_div
+    // document.querySelector('.wrapper').innerHTML += otherProjects + `</div></div>`
     })
 }
 
