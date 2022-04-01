@@ -900,13 +900,16 @@ body {
     text-align: center;
     padding: 8px;
     color: var(--font-text);
+    position: relative;
 }
 
 
 .other-project-content {
-    background-color: rgba(255, 159, 45, 0.35);
-    border-radius: 30px;
-    padding: 16px
+    background-color: hsl(219, 4%, 7%);
+    padding: 16px;
+    .triangle {
+        @include triangle();
+    }
 }
 
 .other-project-header {

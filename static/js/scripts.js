@@ -1,6 +1,17 @@
 feather.replace({ 'stroke-width': 3.2 });
 
-status = ["<In-progress>", "<Upcoming>", "<Completed>"]
+
+var inProgress = new Object()
+inProgress.color = "#ff9f2d"
+inProgress.count = 0
+
+var upcoming = new Object()
+upcoming.color = "#ff9f2d"
+upcoming.count = 0
+
+var completed = new Object()
+completed.color = "#ff9f2d"
+completed.count = 0
 
 function diff_months(dt2, dt1) {
 
@@ -133,15 +144,14 @@ async function auto_update_projects() {
                         <div class="other-projects-main-container">`
     
     let data = await response.json().then(ele => {
-        inprogress_count = 0
-        completed_count = 0
-        upcoming_count = 0
         project_div = ""
+        status = ""
         ele.forEach(element => {
-            if (element.description !== null && element.description.includes("<In-progress>")) {inprogress_count += 1}
-            else if (element.description !== null && element.description.includes("<Completed>")) {completed_count += 1}
-            else if (element.description !== null && element.description.includes("<Upcoming>")) {upcoming_count += 1}
+            if (element.description !== null && element.description.includes("<In-progress>")) {inProgress.count += 1;status = "<In-progress>"}
+            else if (element.description !== null && element.description.includes("<Completed>")) {completed.count += 1;status = "<Completed>"}
+            else if (element.description !== null && element.description.includes("<Upcoming>")) {upcoming.count += 1;status = "<Upcoming>"}
             if (element.description !== null && element.description.includes("#")) {
+                
                 folder = "#";
                 id = element.id;
                 topics = element.topics;
@@ -154,11 +164,20 @@ async function auto_update_projects() {
                 topicsString += "</div>"
 
                 default_branch = element.default_branch;
-                github = element.html_url;
+                
                 projectLink = "#";
                 title = element.name;
                 content = element.description;
                 content = content.slice(0, -1)
+                if(element.description.includes("@")) {
+                    obj = content.split("@");
+                    content = obj[0]
+                    github = obj[1]
+                }
+                else {
+                    github = element.html_url;
+                }
+
                 content = content.split("<<")[0]
                 bg = element.homepage;
                 bg = bg ? bg : "https://cdna.artstation.com/p/assets/images/images/008/571/854/large/klaus-wittmann-overdrive-b-w.jpg?1513640413";
@@ -188,14 +207,16 @@ async function auto_update_projects() {
                                 </div>
                             </div>
                         </a>`;
-                project_div += string;
+                project_div = string + project_div;
 
 
             }
             else if (element.description !== null && element.description.includes("$")){
                 title = element.name;
+                title = title.charAt(0).toUpperCase() + title.slice(1);
                 otherProjects += ` <div class="other-project-wrapper">
                                             <div class="other-project-content">
+                                                <div class="triangle"></div>
                                                 <div class="other-project-header">${title}</div>
                                                 <div class="other-project-sub-header">Description</div>
                                                 <div class="other-project-progress-wrapper">
@@ -213,7 +234,6 @@ async function auto_update_projects() {
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="other-project-cover"></div>
                                         </div>`
             }
         });
@@ -222,21 +242,23 @@ async function auto_update_projects() {
                                     <div class="project-heading-title">PROJECTS</div>
                                     <div class="project-status-container">
                                         <div class="project-status">
-                                            <div class="project-status-number">${inprogress_count}</div>
+                                            <div class="project-status-number">${inProgress.count}</div>
                                             <div class="project-status-title">In Progress</div>
                                         </div>
                                         <div class="project-status">
-                                            <div class="project-status-number">${upcoming_count}</div>
+                                            <div class="project-status-number">${upcoming.count}</div>
                                             <div class="project-status-title">Upcoming</div>
                                         </div>
                                         <div class="project-status">
-                                            <div class="project-status-number">${completed_count}</div>
+                                            <div class="project-status-number">${completed.count}</div>
                                             <div class="project-status-title">Completed</div>
                                         </div>
                                     </div>
                                 </div>`
-        document.querySelector('.wrapper').innerHTML += project_div
+    document.querySelector('.wrapper').innerHTML += project_div
+    //document.querySelector('.wrapper').innerHTML += `<div class="project-heading"><div class="project-heading-title" style="padding-top: 40px;">OTHER PROJECTS</div></div>`
     // document.querySelector('.wrapper').innerHTML += otherProjects + `</div></div>`
+    
     })
 }
 
