@@ -79,6 +79,7 @@ select {
     }
 }
 
+@import 'arduino';
 ::selection {
     text-shadow: none;
     background-color: #00ffe1;
@@ -727,6 +728,60 @@ body {
     width: 48px;
     background-color: darkgray;
 }
+
+.skills-wrapper {
+    width: 100%;
+    margin: 16px;
+}
+
+.skills-content-wrapper {
+    display: flex;
+    padding-bottom: 40px;
+}
+
+.skills-content {
+    width: 65%;
+    padding-left: 75px;
+}
+
+.skills {
+    padding-bottom: 10px;
+    font-size: 17px;
+    width: 100%;
+}
+
+.skill {
+    display: flex;
+    width: 100%;
+    padding-bottom: 10px;
+    position: relative;
+}
+
+
+.title_skill {
+    font-size: 22px;
+    width: 40%;
+    &:before {
+        content: "▹";
+        position: absolute;
+        left: -22px;
+        top: 0px;
+        color: var(--accent-color);
+        font-size: 22px;
+        font-weight: bolder;
+    }
+}
+.content_skill {
+    padding-top: 5px;
+    width: 60%;
+}
+.arduino-wrapper {
+    position:relative;
+    width: 35%;
+    
+    height: 300px;
+}
+
 .project-heading {
     width: 100%;
     padding-left: 75px;
@@ -1036,3 +1091,7 @@ body {
         border-bottom-color: var(--font-text);
     }
 }
+
+
+
+
