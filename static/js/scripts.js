@@ -178,7 +178,7 @@ async function auto_update_projects() {
                     github = element.html_url;
                 }
 
-                content = content.split("<<")[0]
+                content = content.split("<")[0]
                 bg = element.homepage;
                 bg = bg ? bg : "https://cdna.artstation.com/p/assets/images/images/008/571/854/large/klaus-wittmann-overdrive-b-w.jpg?1513640413";
                 projectObject[id] = {"project-title":`Project: ${title}`, "project-description":content, "project-topics":topicsArr}
@@ -213,28 +213,41 @@ async function auto_update_projects() {
             }
             else if (element.description !== null && element.description.includes("$")){
                 title = element.name;
+                topics = element.topics;
+                topicsString = ``;
+                topics.forEach(topic => {
+                    topicsString += `<span class="other-project-topic" style="color: #fff;">${topic}</span>`
+                });
                 title = title.charAt(0).toUpperCase() + title.slice(1);
-                otherProjects += ` <div class="other-project-wrapper">
+                content = element.description;
+                content = content.slice(0, -1)
+                if(element.description.includes("@")) {
+                    obj = content.split("@");
+                    content = obj[0]
+                    github = obj[1]
+                }
+                else {
+                    github = element.html_url;
+                }
+                if(status == "<Completed>") {progress = 100; color="#34c471"}
+                else {progress = 60; color="#ff9f2d"}
+                otherProjects += ` <a class="other-project-wrapper" href=${github} target="_blank">
                                             <div class="other-project-content">
                                                 <div class="triangle"></div>
                                                 <div class="other-project-header">${title}</div>
-                                                <div class="other-project-sub-header">Description</div>
+                                                <div class="other-project-sub-header">${content}</div>
                                                 <div class="other-project-progress-wrapper">
-                                                    <div class="other-project-progress-header">Progress</div>
                                                     <div class="other-project-progress-bar">
                                                         <span class="other-project-progress" ,
-                                                            style="width: 60%; background-color: #ff9f2d;"></span>
+                                                            style="width: ${progress}%; background-color: ${color};"></span>
                                                     </div>
-                                                    <p class="other-project-progress-percentage">60%</p>
+                                                    <p class="other-project-progress-percentage">Progress: ${progress}%</p>
                                                     <div class="other-project-topics-wrapper">
-                                                        <span class="other-project-topic" style="color: #fff;">ROS</span>
-                                                        <span class="other-project-topic" style="color: #fff;">ROS</span>
-                                                        <span class="other-project-topic" style="color: #fff;">ROS</span>
-                                                        <span class="other-project-topic" style="color: #fff;">ROS</span>
+                                                        ${topicsString}
                                                     </div>
                                                 </div>
                                             </div>
-                                        </div>`
+                                        </a>`
             }
         });
         document.querySelector('.wrapper').innerHTML += ` 
@@ -256,8 +269,8 @@ async function auto_update_projects() {
                                     </div>
                                 </div>`
     document.querySelector('.wrapper').innerHTML += project_div
-    //document.querySelector('.wrapper').innerHTML += `<div class="project-heading"><div class="project-heading-title" style="padding-top: 40px;">OTHER PROJECTS</div></div>`
-    // document.querySelector('.wrapper').innerHTML += otherProjects + `</div></div>`
+    document.querySelector('.wrapper').innerHTML += `<div class="project-heading"><div class="project-heading-title" style="padding-top: 40px;">OTHER PROJECTS</div></div>`
+    document.querySelector('.wrapper').innerHTML += otherProjects + `</div></div>`
     
     })
 }
@@ -276,7 +289,6 @@ const scrambleText = text => {
 
 function scrambleHandler(e, id) {
     let count = 0;
-    
     let interval = setInterval(() => {
         if (++count === 5) {
             clearInterval(interval)

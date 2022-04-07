@@ -1042,7 +1042,8 @@ body {
 .other-projects {
   position: relative;
   margin-bottom: 44px;
-  padding: 0px 50px;
+  width: 90%;
+  padding: 0px 0px;
 }
 
 .other-projects-main-container {
@@ -1055,7 +1056,7 @@ body {
 }
 
 .other-project-wrapper {
-  width: 33.3%;
+  width: 48%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1063,15 +1064,18 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  text-align: center;
+  text-align: left;
+  margin: 1%;
   padding: 8px;
   color: var(--font-text);
   position: relative;
+  text-decoration: none !important;
 }
 
 .other-project-content {
   background-color: #111213;
   padding: 16px;
+  padding-left: 25px;
 }
 
 .other-project-content .triangle {
@@ -1084,6 +1088,10 @@ body {
 
 .other-project-header {
   font-size: 22px;
+}
+
+.other-project-progress-wrapper {
+  padding-top: 15px;
 }
 
 .other-project-progress-header {
@@ -1129,6 +1137,7 @@ body {
 .other-project-topic {
   background-color: rgba(255, 255, 255, 0.1);
   border-radius: 20px;
+  margin-right: 10px;
   padding: 6px 16px;
   width: -webkit-fit-content;
   width: -moz-fit-content;
