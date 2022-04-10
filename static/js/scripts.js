@@ -360,8 +360,8 @@ window.addEventListener("scroll", () => {
 	
 	let opacity = 1;
     diff = scrollTop - distanceToTop;    
-	let diffOpacity = opacity - (diff / 500);
-    let diffFont = fontSize - (diff/70);
+	let diffOpacity = opacity - (diff / 1000);
+    let diffFont = fontSize - (diff/140);
 	element.style.opacity = diffOpacity;
 	
     if (diffFont < 0) {
