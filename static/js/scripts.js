@@ -39,10 +39,21 @@ function getWords(monthCount) {
 
 
 const details = {
+    "Addverb": {
+        "title": "Robotics Intern",
+        "organization": "Addverb",
+        "duration": "July 2022 - Present",
+        "website": "https://addverb.com/",
+        "name": "Addverb Technologies USA",
+        "details": ["Designing and supporting hardware and software for Watershed Aqua Bot, Warehouse Bot, Farm Bot",
+            "Implementing a cloud communication architecture for various robot",
+            "Developing the SLAM and perception capabilities of the mentioned robots",
+            "Designing software packages around ROS2(foxy) and microRos framework"]
+    },
     "Kick_Robotics": {
         "title": "Robotics Intern",
         "organization": "Kick Robotics",
-        "duration": "January 2022 - Present",
+        "duration": "January 2022 - June 2022",
         "website": "https://kickrobotics.com/",
         "name": "Kick Robotics LLC.",
         "details": ["Designing and supporting hardware and software for Watershed Aqua Bot, Warehouse Bot, Farm Bot",
@@ -53,7 +64,7 @@ const details = {
     "Rezoom": {
         "title": "Graduate Student Researcher",
         "organization": "Maryland Robotics Center",
-        "duration": "June 2021 - Present",
+        "duration": "June 2021 - January 2022",
         "website": "http://cdcl.umd.edu/",
         "name": "ReZoom",
         "details": ["REZOOM is an artificial intelligence (AI) logistics, operations, and management solution easily retrofitted to e-scooters and other micro mobility platforms to enable self-driving.",
@@ -95,7 +106,7 @@ const details = {
             "Built a test bench for testing and calibrating the system."]
     }
 }
-const orgs = ["Kick_Robotics", "Rezoom", "Airtel", "Analog Devices"]
+const orgs = ["Addverb", "Kick_Robotics", "Rezoom", "Airtel", "Analog Devices"]
 
 function insertOrgs() {
     let orgContainer = document.querySelector('.work-experience-list')
