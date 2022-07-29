@@ -45,10 +45,9 @@ const details = {
         "duration": "July 2022 - Present",
         "website": "https://addverb.com/",
         "name": "Addverb Technologies USA",
-        "details": ["Designing and supporting hardware and software for Watershed Aqua Bot, Warehouse Bot, Farm Bot",
-            "Implementing a cloud communication architecture for various robot",
-            "Developing the SLAM and perception capabilities of the mentioned robots",
-            "Designing software packages around ROS2(foxy) and microRos framework"]
+        "details": ["Developing docking capabilities for Dynamo robot platform using marker based pose estimation.",
+            "Implementing V-SLAM (ORB SLAM3) on the Zippy robot platform.",
+            "Buidling docker images for deployment on various robot platforms"]
     },
     "Kick_Robotics": {
         "title": "Robotics Intern",
@@ -56,10 +55,10 @@ const details = {
         "duration": "January 2022 - June 2022",
         "website": "https://kickrobotics.com/",
         "name": "Kick Robotics LLC.",
-        "details": ["Designing and supporting hardware and software for Watershed Aqua Bot, Warehouse Bot, Farm Bot",
-            "Implementing a cloud communication architecture for various robot",
-            "Developing the SLAM and perception capabilities of the mentioned robots",
-            "Designing software packages around ROS2(foxy) and microRos framework"]
+        "details": ["Designed and supported hardware and software for Watershed Aqua Bot, Warehouse Bot, Farm Bot",
+            "Implemented a cloud communication architecture for various robot",
+            "Developed the SLAM and perception capabilities of the mentioned robots",
+            "Architected software packages around ROS2(foxy) and microRos framework"]
     },
     "Rezoom": {
         "title": "Graduate Student Researcher",
