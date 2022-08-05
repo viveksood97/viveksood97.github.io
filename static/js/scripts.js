@@ -38,6 +38,9 @@ function getWords(monthCount) {
 }
 
 
+
+
+
 const details = {
     "Addverb": {
         "title": "Robotics Intern",
@@ -45,7 +48,8 @@ const details = {
         "duration": "July 2022 - Present",
         "website": "https://addverb.com/",
         "name": "Addverb Technologies USA",
-        "details": ["Developing docking capabilities for Dynamo robot platform using marker based pose estimation.",
+        "details": ["Bringing up the Zippy and Dynamo200 platforms for R&D and clients",
+            "Augmenting current laser based docking approach with visual markers for Dynamo200 robot platform.",
             "Implementing V-SLAM (ORB SLAM3) on the Zippy robot platform.",
             "Buidling docker images for deployment on various robot platforms"]
     },
