@@ -48,10 +48,10 @@ const details = {
         "duration": "July 2022 - Present",
         "website": "https://addverb.com/",
         "name": "Addverb Technologies USA",
-        "details": ["Bringing up the Zippy and Dynamo200 platforms for R&D and clients",
-            "Augmenting current laser based docking approach with visual markers for Dynamo200 robot platform.",
+        "details": ["Bringing up the Zippy and the Dynamo200 platforms for R&D and clients",
+            "Augmenting current laser based docking approach with visual markers for the Dynamo200 robot platform.",
             "Implementing V-SLAM (ORB SLAM3) on the Zippy robot platform.",
-            "Buidling docker images for deployment on various robot platforms"]
+            "Building docker images for deployment on various robot platforms"]
     },
     "Kick_Robotics": {
         "title": "Robotics Intern",
