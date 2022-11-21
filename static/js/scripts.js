@@ -244,7 +244,16 @@ async function auto_update_projects() {
                     github = element.html_url;
                 }
                 if(status == "<Completed>") {progress = 100; color="#34c471"}
-                else {progress = 60; color="#ff9f2d"}
+                else {
+                    if(element.description.includes("^")) {
+                        obj = content.split("^");
+                        progress = obj[1];
+                        content = obj[0];
+                    }
+                    else{progress = 60;}
+                     
+                    color="#ff9f2d"
+                }
                 otherProjects += ` <a class="other-project-wrapper" href=${github} target="_blank">
                                             <div class="other-project-content">
                                                 <div class="triangle"></div>
