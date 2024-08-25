@@ -42,6 +42,20 @@ function getWords(monthCount) {
 
 
 const details = {
+    "Outrider": {
+        "title": "Software Engineer",
+        "organization": "Outrider",
+        "duration": "February 2023 - Present",
+        "website": "https://www.outrider.ai/",
+        "name": "Outrider Technologies",
+        "details": [
+            "One of three core developers responsible for the creation of the first and only ROS2 module at Outrider, significantly contributing to the company's robotics and automation capabilities.",
+            "Implement safety rated behaviors to predict and detect collisions with velocity based dynamic envelops around vehicle footprint",
+            "Developed ROS2 package to validate configuration files using fletcher32 checksum signatures catching over 400 cases of invalid configuration within 3 months of operations.",
+            "Established the ROS2-micoDDS infrastructure to setup communication between ROS2 environment and embedded targets.",
+            "Actively contributed to the ROS2 containerized environment by creating tools to automate the release mechanism, allow and maintain better coverage metrics and enforce guidelines for cleaner code. Results include coverage over 98% and reduction in build times of over 50%"
+        ]
+    },
     "Addverb": {
         "title": "Robotics Intern",
         "organization": "Addverb",
