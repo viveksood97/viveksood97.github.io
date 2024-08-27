@@ -49,7 +49,7 @@ const details = {
         "website": "https://www.outrider.ai/",
         "name": "Outrider Technologies",
         "details": [
-            "One of three core developers responsible for the creation of the first and only ROS2 module at Outrider, significantly contributing to the company's robotics and automation capabilities.",
+            "One of three core developers responsible for the creation of the first and only ROS2 module at Outrider.",
             "Implement safety rated behaviors to predict and detect collisions with velocity based dynamic envelops around vehicle footprint",
             "Developed ROS2 package to validate configuration files using fletcher32 checksum signatures catching over 400 cases of invalid configuration within 3 months of operations.",
             "Established the ROS2-micoDDS infrastructure to setup communication between ROS2 environment and embedded targets.",
