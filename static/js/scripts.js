@@ -59,7 +59,7 @@ const details = {
     "Addverb": {
         "title": "Robotics Intern",
         "organization": "Addverb",
-        "duration": "July 2022 - Present",
+        "duration": "July 2022 - December 2022",
         "website": "https://addverb.com/",
         "name": "Addverb Technologies USA",
         "details": ["Bringing up the Zippy and the Dynamo200 platforms for R&D and clients",
